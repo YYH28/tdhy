@@ -1,0 +1,52 @@
+<!-- 配置页面路径  -->
+
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8"> 
+	<title>修改</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="stylesheet" href="https://cdn.staticfile.org/twitter-bootstrap/3.3.7/css/bootstrap.min.css">  
+	<script src="https://cdn.staticfile.org/jquery/2.1.1/jquery.min.js"></script>
+	<script src="https://cdn.staticfile.org/twitter-bootstrap/3.3.7/js/bootstrap.min.js"></script>
+</head>
+<body>
+	
+<div class="container">
+	<h2>修改</h2>      
+	<form role="form" action="/navigation/edit" method="post">
+	  <div class="form-group">
+	    <label for="id">编号</label>
+	    <input type="text" class="form-control" name="id" id="id" value="${menu.id}" placeholder="请输入编号">
+	  </div>
+	  <div class="form-group">
+	    <label for="navname">导航栏标题</label>
+	    <input type="text" class="form-control" name="navname" id="navname" value="${menu.navname}" placeholder="请输入导航栏标题">
+	  </div>
+	  <div class="form-group">
+	    <label for="navicon">图片</label>
+	    <input type="text" class="form-control" name="navicon" id="navicon" value="${menu.navicon}" placeholder="请输入图片地址">
+	  </div>
+	  <div class="form-group">
+	    <label for="pid">内容</label>
+	    <input type="text" class="form-control" name="pid" id="pid" value="${menu.pid}" placeholder="请输入内容">
+	  </div>
+	  <div class="form-group">
+	    <label for="url">跳转地址</label>
+	    <input type="text" class="form-control" name="url" id="url"  value="${menu.url}" placeholder="请输入跳转地址">
+	  </div>
+	  <div class="form-group">
+	    <label for="sort">序号</label>
+	    <input type="number" class="form-control" name="sort" id="sort"  value="${menu.sort}" placeholder="请输入序号">
+	  </div>
+	  <div class="form-group">
+	    <label for="isshow">状态</label>
+	    <input type="number" class="form-control" name="isshow" id="isshow"  value="${menu.isshow}" placeholder="请输入状态">
+	  </div>
+	  
+	  <button type="submit" class="btn btn-default">提交</button>
+	</form> 
+</div>
+
+</body>
+</html>

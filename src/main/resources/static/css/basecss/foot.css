@@ -1,0 +1,43 @@
+@charset "utf-8";
+footer{
+    background-color: #182418;
+    padding: 35px 0;
+}
+.foot{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+}
+.foot_left{
+    left: 50px;
+}
+.foot_link{
+    padding: 40px 0;
+}
+.foota{
+    margin-right: 35px;
+}
+.img{
+    margin: 10px;
+}
+.copyright{
+    margin: 5px 10px;
+
+}
+.record{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 5px;
+}
+.foot_right{
+    display: flex;
+    margin-left: 120px;
+}
+.frdiv{
+    margin: 0 0 20px 30px;
+}
+.frp{
+    margin: 5px;
+}

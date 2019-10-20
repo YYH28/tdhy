@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>登录</title>
+
+    <link rel="stylesheet" href="${request.contextPath}/css/login.css">
+    <link rel="stylesheet" href="${request.contextPath}/css/base.css">
+</head>
+<body>
+	<#include "${request.contextPath}/base/header.html">
+    <div class="login_conent">
+        <div class="login">
+            <h1 class="loh1" >用户登录</h1>
+            <div class="reg_info f15">
+                <div class="reg_left">
+                    <p class="regp">&nbsp;→&nbsp;&nbsp;请输入您的账号信息，用于登录天地华宇系统</p>
+                    <hr class="reghr" />
+                    <form action="/user/login" method="post">
+                    <div class="logindiv">
+                        <div class="name loginnp">
+                            <label for="">用户名：</label>
+                            <input type="text" id="username" placeholder="邮箱">
+                        </div>
+                        <div class="pwd loginnp">
+                                <label for="">密&nbsp;&nbsp;码：</label>
+                                <input type="text" id="username" placeholder="邮箱">
+                            </div>
+                        <div class="reg_bar">
+                            <a href="#" class="rega">忘记密码</a>
+                            <br />
+                            <button type="submit" class="regb">登录</button>
+                            <button type="submit" class="regb">注册</button>
+                        </div>
+                    </div>
+                    </form>
+                </div>
+                <div class="reg_right">
+                    <p class="regrp">还没有账号，<a href="#">立即去注册  >></a></p>
+                    <p>注册成为<b>天地华宇会员</b>，您可以享受更多的服务</p>
+                    <br />
+                    <div class="regul">
+                        <ul>
+                            <li class="regrli">账号一体化</li>
+                            <li class="regrli">快捷下单</li>
+                            <li class="regrli">在线理赔</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <#include "${request.contextPath}/base/foot.html">
+</body>
+</html>

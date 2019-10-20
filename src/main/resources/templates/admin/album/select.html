@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta http-equiv="X-UA-Compatible" content="ie=edge">
+<title>图片列表</title>
+<!-- Bootstrap 3.3.7 -->
+<link rel="stylesheet"
+	href="${request.contextPath}/admin/plugins/bootstrap/css/bootstrap.min.css">
+<!-- Font Awesome -->
+<link rel="stylesheet"
+	href="${request.contextPath}/admin/plugins/font-awesome/css/font-awesome.min.css">
+<!-- Ionicons -->
+<link rel="stylesheet"
+	href="${request.contextPath}/admin/plugins/Ionicons/css/ionicons.min.css">
+<style type="text/css">
+.imglist {
+	margin: 0;
+	padding: 0;
+	border: 0;
+}
+
+.imglist {
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: space-between;
+}
+
+.imglist .img-box {
+	display: inline-block;
+	position: relative;
+	width: 20%;
+}
+
+.img-bar {
+	position: absolute;
+	right: 5px;;
+	top: 5px;
+}
+
+.imglist img:hover {
+	border: 2px solid red;
+	cursor: hand;
+	box-sizing: border-box;
+}
+</style>
+</head>
+
+<body>
+	<div class="container-fluid  imglist">
+		<#list albums as album>
+		<div class="img-box">
+			<img alt="" src="${album.imagePath}" width="100%" height="100px;">
+			<span class="img-bar"> <span class="glyphicon glyphicon-trash"
+				id="${album.id}" aria-hidden="true" onclick="deleteAlbum(this.id)"></span>
+			</span>
+		</div>
+		</#list>
+	</div>
+	<!-- jQuery 3 -->
+	<script
+		src="${request.contextPath}/admin/plugins/jquery/jquery-3.4.1.min.js"></script>
+
+	<script type="text/javascript">
+		$(function() {
+
+			$(".imglist img")
+					.click(
+							function(e) {
+								console.log(e.currentTarget.currentSrc)
+								window.parent.document
+										.getElementById('inputImageUrl').value = e.currentTarget.currentSrc;
+							})
+
+		})
+		function deleteAlbum(id) {
+			console.log(id);
+		}
+	</script>
+</body>
+</html>

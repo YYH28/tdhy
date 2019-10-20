@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+<meta charset="UTF-8">
+<!--告诉IE浏览器以最高级模式渲染当前网页-->
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta http-equiv="X-UA-Compatible" content="ie=edge">
+<title>天地华宇物流物流官方网站</title>
+<!-- 小标图 -->
+<link rel="Shorcut Icon" href="${request.contextPath}/images/ico.png"
+	type="image/x-icon" />
+<!-- 关键字搜索 -->
+<meta name="Keywords"
+	content="公路快运,物流货运,天地华宇,天地华宇物流,
+    天地华宇物流查询,华宇物流,华宇物流查询,天地华宇俱乐部,华宇俱乐部，上汽物流" />
+<!-- 只要设置了description页面描述，那么百度搜索结果，就能够显示这些语句，
+        这个技术叫做SEO（search engine optimization,搜索引擎优化 -->
+<meta name="Description"
+	content="&quot天地华宇是国家第一批
+    &quotAAAAA&quot级资质的物流企业，其运营网络是中国最大的公路快运网络之一。
+    可通过天地华宇官方网站实现在线下单、物流单号查询、物流网点查询、物流价格查询、
+    随时随地高效管理您的快件。您的尊贵托付，我们全心承递！" />
+
+<link href="${request.contextPath}/css/base.css" rel="stylesheet" type="text/css" />
+<!-- <link href="${request.contextPath}/css/addition.css" rel="stylesheet" type="text/css" /> -->
+<link href="${request.contextPath}/css/master.css" rel="stylesheet" type="text/css" />
+
+</head>
+
+<body>
+	<#include "${request.contextPath}/base/header.html">
+	<div class="in_product">
+		<div class="p_w">
+			<h2 class="in_title">
+				<span>产品业务</span> <i></i>
+			</h2>
+			<ul>
+				<#list inProductMenus as menu>
+				<li><a href="${menu.url}" class="in_product_icon${menu.id}">
+						<i style="background-position: ${menu.icon};"></i> <b>${menu.title}</b>
+						<span>${menu.content}</span>
+				</a></li>
+				</#list>
+			</ul>
+		</div>
+	</div>
+	<#include "${request.contextPath}/base/foot.html">
+</body>
+
+</html>
