@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -7,8 +8,10 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>注册</title>
 
-    <link rel="stylesheet" href="./css/register.css">
-    <link rel="stylesheet" href="./css/base.css">
+    <link rel="stylesheet" href="${staticPath}/css/register.css">
+    <link rel="stylesheet" href="${staticPath}/css/base.css">
+        <script type="text/javascript" src="${request.contextPath}${staticPath}/admin/plugins/jquery/jquery-3.4.1.js"></script>
+  	<script src="${request.contextPath}${staticPath}/admin/plugins/layer/layer.js"></script>
 </head>
 
 <body>
@@ -21,7 +24,7 @@
                     <p class="regp">&nbsp;→&nbsp;&nbsp;请输入您的账号信息，用于登录天地华宇系统</p>
 
                     <hr class="reghr" />
-                    <form action="/user/register" method="post">
+                    <form action="javascript:void(0)" method="post">
                     <div class="logindiv">
                         <div class="name loginnp">
                             <span>*</span><label for="">手机号：</label>
@@ -29,7 +32,7 @@
                         </div>
                         <div class="pwd loginnp">
                             <span>*</span><label for="">密&nbsp;&nbsp;码：</label>
-                            <input type="password" id="password" name="password" placeholder="">
+                            <input type="password" id="userPassword" name="userPassword" placeholder="">
                         </div>
                         <div class="pwd loginnp">
                             <span>*</span><label for="">确认密码：</label>
@@ -37,11 +40,11 @@
                         </div>
                         <div class="name loginnp">
                             <label for="">用户名：</label>
-                            <input type="text" id="username " name="username" class="f14" placeholder="可作为登录账号">
+                            <input type="text" id="userName" name="userName" class="f14" placeholder="可作为登录账号">
                         </div>
                         <div class="name loginnp">
                             <label for="">邮箱地址：</label>
-                            <input type="email" id="email" name="email" class="f14" placeholder="可作为登录账号和密码找回凭证">
+                            <input type="email" id="userMail" name="userMail" class="f14" placeholder="可作为登录账号和密码找回凭证">
                         </div>
                         <div class="pwd loginnp">
                             <span>*</span><label for="">短信验证：</label>
@@ -53,14 +56,14 @@
                                     href="#"><span>华宇网上营业厅服务协议</span></a></label>
                             <br />
                             <div class="reg1">
-                                <button type="submit" class=" regbt regb f14">注册</button>
+                                <button type="submit" class=" regbt regb f14" onclick="admin_register()">注册</button>
                             </div>
                         </div>
                     </div>
                     </form>
                 </div>
                 <div class="reg_right">
-                    <p class="regrp">已有账号，<a href="#">立即去登录 >></a></p>
+                    <p class="regrp">已有账号，<a href="/user/tologin">立即去登录 >></a></p>
                     <p>注册成为<b>天地华宇会员</b>，您可以享受更多的服务</p>
                     <br />
                     <div class="regul">
@@ -76,5 +79,48 @@
     </div>
     <#include "${request.contextPath}/base/foot.html">
 </body>
-
+<script type="text/javascript">
+function admin_register() {
+    if($("#userName").val()==""){
+		layer.msg('请输入账号');
+        return false
+    }else if($("#userPassword").val()==""){
+		layer.msg('请输入密码"');
+        return false
+    }else if($("#userMail").val()==""){
+		layer.msg('请输入邮箱"');
+        return false
+    }else{
+    	var mail = $("#userMail").val();
+    	var regemail = /^(\w-*\.*)+@(\w-?)+(\.\w{2,})+$/;
+    	if(!(regemail.test(mail))){
+    		layer.msg('请输入正确的邮箱"');
+            return false
+    	}else{
+    		data={
+   	    		"userName":$("#userName").val(),
+   	    		"userPassword":$("#userPassword").val(),
+   	    		"userEmail":$("#userMail").val()
+    		}
+    		console.log($("#userName").val())
+    		console.log(data)
+     	    $.ajax({
+    	    	"url" : "${request.contextPath}/user/register",
+    	        "contentType": "application/json",
+    	    	"data":JSON.stringify(data),
+    	    	"type" : "post",
+    	    	"dataType" : "json",   
+    	    	"success"	: function (resultMsg) {                        
+        	    		console.log(resultMsg)
+	    	    		if(resultMsg.code==1){
+	    	        		layer.msg('验证邮件发送成功');
+	    	    		}else{
+	    	        		layer.msg('验证邮件发送失败，请重新注册');
+	    	    		}
+    	    		}
+    	    	}); 
+    	}
+    }
+}
+</script>
 </html>

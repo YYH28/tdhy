@@ -3,9 +3,9 @@ package com.example.tdhy.po;
 public class User {
     private Integer id;
 
-    private String ueseName;
+    private String userName;
 
-    private String uesrTele;
+    private String userTele;
 
     private String userPassword;
 
@@ -23,20 +23,20 @@ public class User {
         this.id = id;
     }
 
-    public String getUeseName() {
-        return ueseName;
+    public String getUserName() {
+        return userName;
     }
 
-    public void setUeseName(String ueseName) {
-        this.ueseName = ueseName == null ? null : ueseName.trim();
+    public void setUserName(String userName) {
+        this.userName = userName == null ? null : userName.trim();
     }
 
-    public String getUesrTele() {
-        return uesrTele;
+    public String getUserTele() {
+        return userTele;
     }
 
-    public void setUesrTele(String uesrTele) {
-        this.uesrTele = uesrTele == null ? null : uesrTele.trim();
+    public void setUserTele(String userTele) {
+        this.userTele = userTele == null ? null : userTele.trim();
     }
 
     public String getUserPassword() {

@@ -13,36 +13,36 @@
 <body>
 	
 <div class="container">
-
-	<h2>添加</h2>      
-	<form role="form" action="/navigation/add" method="post">
+	<h2>修改</h2>      
+	<form role="form" action="/user/add" method="post">
 	  <div class="form-group">
 	    <label for="id">编号</label>
-	    <input type="text" class="form-control" name="id" id="id" placeholder="请输入编号">
+	    <input type="text" class="form-control" name="id" id="id"  placeholder="请输入编号">
 	  </div>
 	  <div class="form-group">
-	    <label for="navname">导航栏标题</label>
-	    <input type="text" class="form-control" name="navname" id="navname" placeholder="请输入导航栏标题">
+	    <label for="userName">用户名</label>
+	    <input type="text" class="form-control" name="userName" id="userName"  placeholder="请输入用户名">
 	  </div>
 	  <div class="form-group">
-	    <label for="navicon">图片</label>
-	    <input type="text" class="form-control" name="navicon" id="navicon" placeholder="请输入图片地址">
+	    <label for="userTele">电话</label>
+	    <input type="text" class="form-control" name="userTele" id="userTele"  placeholder="请输入电话">
 	  </div>
 	  <div class="form-group">
-	    <label for="pid">父级id</label>
-	    <input type="text" class="form-control" name="pid" id="pid" placeholder="请输入父级id">
+	    <label for="userPassword">密码</label>
+	    <input type="text" class="form-control" name="userPassword" id="userPassword"  placeholder="请输入密码">
 	  </div>
 	  <div class="form-group">
-	    <label for="url">跳转地址</label>
-	    <input type="text" class="form-control" name="url" id="url"  placeholder="请输入跳转地址">
+	    <label for="userEmail">电子邮件</label>
+	    <input type="text" class="form-control" name="userEmail" id="userEmail"  placeholder="请输入电子邮件">
+	  </div>
+	  
+	  <div class="form-group">
+	    <label for="userStatus">状态</label>
+	    <input type="number" class="form-control" name="userStatus" id="userStatus"  placeholder="请输入状态">
 	  </div>
 	  <div class="form-group">
-	    <label for="sort">序号</label>
-	    <input type="number" class="form-control" name="sort" id="sort"  placeholder="请输入序号">
-	  </div>
-	  <div class="form-group">
-	    <label for="isshow">状态</label>
-	    <input type="number" class="form-control" name="isshow" id="isshow"  placeholder="请输入状态">
+	    <label for="userCode">激活码</label>
+	    <input type="number" class="form-control" name="userCode" id="userCode"   placeholder="请输入激活码">
 	  </div>
 	  
 	  <button type="submit" class="btn btn-default">提交</button>

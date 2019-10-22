@@ -1,46 +1,20 @@
 package com.example.tdhy.service;
 
-import java.io.Serializable;
-import java.util.List;
-
 import com.example.tdhy.po.User;
 
-public interface UserService extends Serializable {
-	public User getById(Integer id) throws Exception;
+public interface UserService extends BaseService<User, Integer> {
+	// 根据用户名查询用户信息
+	public User getByUsername(String username) throws Exception;
 
-	/**
-	 * 用户注册
-	 * 
-	 * @param user
-	 */
-	void add(User user);
+	// 用户登录并存入session
+	public int checkUser(User user) throws Exception;
 
-	/**
-	 * 根据激活码查找用户
-	 * 
-	 * @param activeCode
-	 * @return
-	 */
-	User getUserByCode(String userCode);
+	// 用户注册激活
+	public int setUserEnable(String username, String code) throws Exception;
 
-	/**
-	 * 修改
-	 * 
-	 * @param user
-	 */
-	void modify(User user);
+	// 用户注册
+	public int register(User user) throws Exception;
 
-	/**
-	 * 登录
-	 * 
-	 * @param user
-	 * @return
-	 */
-	User get(User user);
-
-	public List<User> getAll() throws Exception;
-
-	public int delete(Integer id) throws Exception;
-
-	public int update(User t) throws Exception;
+	// 发送激活邮件
+	public void sendSimpleMail(User user) throws Exception;
 }

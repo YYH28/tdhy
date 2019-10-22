@@ -28,7 +28,6 @@ public class IndexController {
 		model.addAttribute("navigationVms", navigationMenus);
 		List<InProduct> inProductMenus = inProductService.getAll();
 		model.addAttribute("inProductMenus", inProductMenus);
-
 		return "index";
 	}
 

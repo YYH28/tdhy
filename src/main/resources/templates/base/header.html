@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -25,8 +26,8 @@
 			<div class="top dlb ">
 				<div class="topboolbar f14 ">
 					<ul class="topul">
-						<li class="dlb"><a href="login.html">登录</a></li>
-						<li class="dlb"><a href="${request.contextPath}/register.html">注册</a></li>
+						<li class="dlb"><a href="/user/tologin">登录</a></li>
+						<li class="dlb"><a href="/user/toregister">注册</a></li>
 					</ul>
 				</div>
 				<div class="topnav f14 ">
@@ -61,7 +62,8 @@
 							<span class="navsp">
 								${navigationDTO.navname} </span>
 							</a>
-					</#if> <!-- <#if navigationDTO.navname!="首页">  --><!-- <li class="navli navlihome">
+					</#if> 
+					<#if navigationDTO.navname!="首页"> <!-- <li class="navli navlihome">
 							<a href="${navigationDTO.url}" class="navhome"> 
 								<span class="navsp"></span>
 							</a>
@@ -71,12 +73,12 @@
 						<li class="navlistli">
 							<a href="${children.url}" class="navlista"> 
 							<span class="navsp">${children.navname}</span> 
-							<i class="navlist_menu" style="background-position: ${children.navicon"></i>
+							<i class="navlist_menu" style="background-position: ${children.navicon}"></i>
 							</a>
 						</li>
 					</#list>
 					</ul>
-				
+				</#if>
 				</li>
 				</#list>
 			</ul>

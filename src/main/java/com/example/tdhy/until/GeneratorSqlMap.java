@@ -28,9 +28,7 @@ public class GeneratorSqlMap {
 	 * public static void main(String[] args) throws Exception {
 	 * 
 	 * try { GeneratorSqlMap generatorSqlMap = new GeneratorSqlMap();
-	 * generatorSqlMap.generator(); System.out.println("oooooooooooooo"); } catch
-	 * (Exception e) { e.printStackTrace(); }
-	 * 
-	 * }
+	 * generatorSqlMap.generator(); System.out.println("已生成"); } catch (Exception e)
+	 * { e.printStackTrace(); } }
 	 */
 }

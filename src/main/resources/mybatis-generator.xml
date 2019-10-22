@@ -32,10 +32,10 @@
 			targetPackage="com.example.tdhy.mapper" targetProject=".\src\main\java">
 			<property name="enableSubPackages" value="true" />
 		</javaClientGenerator>
-		<!-- <table tableName="navigation"></table> -->
+		<table tableName="navigation"></table>
 		<table tableName="in_product"></table>
-		<!-- <table tableName="album"></table>
-		<table tableName="user"></table> -->
+		<table tableName="album"></table>
+		<table tableName="user"></table> 
 		
 	</context>
 </generatorConfiguration>
