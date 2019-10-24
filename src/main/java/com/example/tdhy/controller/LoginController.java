@@ -42,8 +42,10 @@ public class LoginController {
 		User user = JSON.toJavaObject(getUser, User.class);
 		if (userService.checkUser(user) == 1) {
 			session.setAttribute("UserInfo", user);
+			return 1;
+		} else {
+			return 0;
 		}
-		return userService.checkUser(user);
 	}
 
 	@RequestMapping("/toregister")
@@ -57,14 +59,7 @@ public class LoginController {
 		System.out.println(getUser.toJSONString());
 		ResultMsg msg = new ResultMsg();
 		User user = JSON.toJavaObject(getUser, User.class);
-		try {
-			userService.register(user);
-			msg.setCode(1);
-		} catch (Exception e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-			msg.setCode(0);
-		}
+		msg.setCode(userService.register(user));
 		return msg;
 	}
 

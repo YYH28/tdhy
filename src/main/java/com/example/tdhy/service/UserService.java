@@ -6,7 +6,7 @@ public interface UserService extends BaseService<User, Integer> {
 	// 根据用户名查询用户信息
 	public User getByUsername(String username) throws Exception;
 
-	// 用户登录并存入session
+	// 用户登录
 	public int checkUser(User user) throws Exception;
 
 	// 用户注册激活
@@ -17,4 +17,5 @@ public interface UserService extends BaseService<User, Integer> {
 
 	// 发送激活邮件
 	public void sendSimpleMail(User user) throws Exception;
+
 }

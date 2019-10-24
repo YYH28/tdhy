@@ -7,7 +7,6 @@ import java.util.UUID;
 import javax.mail.internet.MimeMessage;
 
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.beans.factory.annotation.Value;
 import org.springframework.mail.javamail.JavaMailSender;
 import org.springframework.mail.javamail.MimeMessageHelper;
 import org.springframework.stereotype.Service;
@@ -25,8 +24,6 @@ public class UserServiceImpl implements UserService {
 	 * 
 	 */
 
-	@Value("${spring.mail.username}")
-	private String email;
 	@Autowired
 	private UserMapperExtend userMapper;
 	@Autowired
@@ -38,15 +35,6 @@ public class UserServiceImpl implements UserService {
 		return userMapper.selectByExample(null);
 	}
 
-//	@Override
-//	public void add(User t) {
-//		userMapper.insert(t);
-//		String code = t.getUserCode();
-//		String subject = ";
-//		String content = 
-//		mailService.sendMimeMail(t.getUserEmail(), subject, content);
-//
-//	}
 	@Override
 	public int add(User t) throws Exception {
 		List<User> getUser = new ArrayList<User>();
@@ -106,7 +94,7 @@ public class UserServiceImpl implements UserService {
 		}
 	}
 
-	// 用户登录并存入session
+	// 用户登录
 	@Override
 	public int checkUser(User user) throws Exception {
 		// TODO Auto-generated method stub
@@ -118,29 +106,14 @@ public class UserServiceImpl implements UserService {
 		}
 	}
 
-	// 用户注册激活
-	@Override
-	public int setUserEnable(String username, String code) throws Exception {
-		User user = getByUsername(username);
-		if (user.getUserCode().equals(code)) {
-			user.setUserStatus(1);
-			return update(user);
-		} else {
-			return 0;
-		}
-	}
-
 	// 用户注册
 	@Override
 	public int register(User user) throws Exception {
 		// TODO Auto-generated method stub
-		System.out.println();
 		try {
-			System.out.println("==============================");
+
 			add(user);
-			System.out.println(user.getUserName());
-			System.out.println(user.getUserEmail());
-			System.out.println(user.getUserPassword());
+
 			sendSimpleMail(user);
 			return 1;
 		} catch (Exception e) {
@@ -163,6 +136,18 @@ public class UserServiceImpl implements UserService {
 
 		mailSender.send(mimeMessage);
 
+	}
+
+	// 用户注册激活
+	@Override
+	public int setUserEnable(String username, String code) throws Exception {
+		User user = getByUsername(username);
+		if (user.getUserCode().equals(code)) {
+			user.setUserStatus(1);
+			return update(user);
+		} else {
+			return 0;
+		}
 	}
 
 }

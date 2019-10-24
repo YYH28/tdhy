@@ -22,10 +22,16 @@ Ionicons
 	<script src="https://cdn.staticfile.org/jquery/2.1.1/jquery.min.js"></script>
 	<script src="https://cdn.staticfile.org/twitter-bootstrap/3.3.7/js/bootstrap.min.js"></script>
  <style type="text/css">
+ 
  .a{
  display:flex;
  align-self: auto;}
-<!--.imglist {
+ a{
+ 	width: 80px;
+ 	height: 3
+ 	0px;
+ }
+/*.imglist {
 	margin: 0;
 	padding: 0;
 	border: 0;
@@ -53,13 +59,15 @@ Ionicons
 	border: 2px solid red;
 	cursor: hand;
 	box-sizing: border-box;
-}-->
+}*/
 </style> 
 </head>
 
 <body>
+
 	<div class="container1 imglist">
-	<h2>图片管理</h2>    
+	<h2>图片管理</h2>   
+	<br /> 
 	<a class="btn btn-info" href="/admin/album/toupload">上传图片</a>      
 	<table class="table table-hover">
 		<thead>
@@ -70,9 +78,7 @@ Ionicons
 				<th>高度</th>
 				<th>名称</th>
 				<th>标签</th>
-				<!-- <th>创建时间</th> -->
 				<th>图片</th>
-				<th>修改</th>
 				<th>删除</th>
 			</tr>
 		</thead>
@@ -85,8 +91,8 @@ Ionicons
 					<td>${menu.height}</td>
 					<td>${menu.name}</td>
 					<td>${menu.tags}</td>
-					<!-- <td>${menu.createTime}</td> -->
-					<td class="a"><img alt="${menu.name}" src="${menu.imagePath}" width="50px" height="50px;"></td>
+					
+					<td class="a"><img alt="${menu.name}" src="${menu.imagePath}" width="50%" height="50%;"></td>
 					<td><a class="btn btn-danger" onclick="deleteAlbum(this.id)" href="/admin/album/delete?id=${menu.id}">删除</a></td>
 				</tr>
 			</#list>  
@@ -108,7 +114,7 @@ Ionicons
 	<script
 		src="${request.contextPath}/admin/plugins/jquery/jquery-3.4.1.min.js"></script>
 
-	<!-- <script type="text/javascript">
+	<script type="text/javascript">
 		$(function() {
 
 			$(".imglist img")
@@ -116,13 +122,13 @@ Ionicons
 							function(e) {
 								console.log(e.currentTarget.currentSrc)
 								window.parent.document
-										.getElementById('inputImageUrl').value = e.currentTarget.currentSrc;
+										.getElementById('imagePath').value = e.currentTarget.currentSrc;
 							})
 
 		})
 		function deleteAlbum(id) {
 			console.log(id);
 		}
-	</script> -->
+	</script>
 </body>
 </html>

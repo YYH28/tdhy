@@ -277,7 +277,7 @@
   width:15px;
   height:16px;
   z-index: 10;
-  background: url(../images/150602_icon08.png) no-repeat -40px 0;
+  background: url(..${staticPath}/images/150602_icon08.png) no-repeat -40px 0;
 }
 .quick-tools .waybill .quick-tool .bill-number .search_icon {
   display: none;

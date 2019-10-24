@@ -12,7 +12,7 @@
 
 <div class="container">
 	<h2>用户管理</h2>    
-	<a class="btn btn-info" href="/user/toAdd">添加</a>      
+	<a class="btn btn-info" href="/admin/toAdd">添加</a>      
 	<table class="table table-hover">
 		<thead>
 			<tr>
@@ -37,8 +37,8 @@
 					<td>${menu.userEmail}</td>
 					<td>${menu.userStatus}</td>
 					<td>${menu.userCode}</td>
-					<td><a class="btn btn-info" href="/user/toEdit?id=${menu.id}">修改</a></td>
-					<td><a class="btn btn-danger" href="/user/delete?id=${menu.id}">删除</a></td>
+					<td><a class="btn btn-info" href="/admin/toEdit?id=${menu.id}">修改</a></td>
+					<td><a class="btn btn-danger" href="/admin/delete?id=${menu.id}">删除</a></td>
 				</tr>
 			</#list>  
 		</tbody>
