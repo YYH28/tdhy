@@ -1,0 +1,118 @@
+@charset "utf-8";
+
+body{
+    background-color:#f4f5f9;
+    height: 100%;
+    
+}
+.login_conent{
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    
+}
+.login{
+    margin: 20px;
+}
+.loh1{
+    background-color: #b4b4b4;
+    color: #fff;
+    font-size: 18px;
+    padding: 5px 0 5px 10px;
+}
+.reg_info{
+
+    display: flex;
+    background-color: #fff;
+    padding: 40px;
+}
+.reg_left{
+    display: flex;
+    flex-flow: column wrap;
+    border-right: 1px dashed #c0c1c5;
+
+}
+.regp{
+    padding: 10px;
+}
+.reghr{
+    margin-bottom: 50px;
+    margin-right: 7px;
+}
+.loginnp{
+    margin-right: 60px;
+    display: flex;
+    justify-content: flex-end;
+}
+.name,.pwd{
+    padding: 5px;
+}
+.reg_bar{
+    display: block;
+    text-align: right;
+    margin-right: 40px;
+    padding-top: 5px;
+
+}
+.rega{
+    color: #f15a22;
+}
+.regb{
+    border-left: 4px solid  #f15a22;
+    border-right: 4px solid  #f15a22;
+    background-color: #f15a22;
+    color: #fff;
+    border-top: solid  #f15a22;
+    border-bottom:  solid  #f15a22;
+}
+.regbt{
+    width: 116px;
+    height: 30px;
+    
+    
+}
+.reg_right{
+    margin: 50px;
+}
+.regrp{
+    margin-bottom: 20px;
+    display: flex;
+    
+    justify-content: flex-start;
+}
+.regrli{
+    background: url(../images/150703_icon01.png) no-repeat 24px 50%;
+    padding-left: 44px;
+}
+span{
+    color: #f12a22;
+    
+}
+.logindiv{
+    display: flex;
+    flex-flow: column wrap;
+    
+}
+.num{
+    width: 80px;
+    height: 30px;
+    
+}
+#number{
+    width: 110px;
+}
+input{
+    height: 28px;
+    width: 200px;
+}
+#terms{
+    height: 13px !important;
+    width: 13px  !important;
+}
+.reg1{
+    margin-top: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}

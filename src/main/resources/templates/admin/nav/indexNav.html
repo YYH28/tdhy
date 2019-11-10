@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8"> 
+	<title>后台管理</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="stylesheet" href="${request.contextPath}${staticPath}/admin/plugins/bootstrap/css/bootstrap.min.css">  
+	<script src="${request.contextPath}${staticPath}/admin/plugins/jquery/jquery-3.4.1.min.js"></script>
+	<script src="${request.contextPath}${staticPath}/admin/plugins/bootstrap/js/bootstrap.min.js"></script>
+</head>
+<body>
+
+<div class="container">
+	<h2>导航栏管理</h2>    
+	<a class="btn btn-info" href="/admin/navigation/toAdd">添加</a>      
+	<table class="table table-hover">
+		<thead>
+			<tr>
+				<th>编号</th>
+				<th>导航栏标题</th>
+				<th>图片</th>
+				<th>上级导航栏id</th>
+				<th>跳转地址</th>
+				<th>排序编号</th>
+				<th>是否显示</th>
+				<th>修改</th>
+				<th>删除</th>
+			</tr>
+		</thead>
+		<tbody>
+			<#list navigationMenus as menu>
+				<tr>
+					<td>${menu.id}</td>
+					<td>${menu.navname}</td>
+					<td>${menu.navicon}</td>
+					<td>${menu.pid}</td>
+					<td>${menu.url}</td>
+					<td>${menu.sort}</td>
+					<td>${menu.isshow}</td>
+					<td><a class="btn btn-info" href="/admin/navigation/toEdit?id=${menu.id}">修改</a></td>
+					<td><a class="btn btn-danger" href="/admin/navigation/delete?id=${menu.id}">删除</a></td>
+				</tr>
+			</#list>  
+		</tbody>
+	</table>
+</div>
+</body>
+</html>

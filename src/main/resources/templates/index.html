@@ -1,0 +1,106 @@
+
+<!DOCTYPE html>
+<html>
+
+<head>
+<meta charset="UTF-8">
+<!--告诉IE浏览器以最高级模式渲染当前网页-->
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta http-equiv="X-UA-Compatible" content="ie=edge">
+<title>天地华宇物流物流官方网站</title>
+<!-- 小标图 -->
+<link rel="Shorcut Icon" href="${request.contextPath}${staticPath}/images/ico.png"
+	type="image/x-icon" />
+<!-- 关键字搜索 -->
+<meta name="Keywords"
+	content="公路快运,物流货运,天地华宇,天地华宇物流,
+    天地华宇物流查询,华宇物流,华宇物流查询,天地华宇俱乐部,华宇俱乐部，上汽物流" />
+<!-- 只要设置了description页面描述，那么百度搜索结果，就能够显示这些语句，
+        这个技术叫做SEO（search engine optimization,搜索引擎优化 -->
+<meta name="Description"
+	content="&quot天地华宇是国家第一批
+    &quotAAAAA&quot级资质的物流企业，其运营网络是中国最大的公路快运网络之一。
+    可通过天地华宇官方网站实现在线下单、物流单号查询、物流网点查询、物流价格查询、
+    随时随地高效管理您的快件。您的尊贵托付，我们全心承递！" />
+
+<link rel="stylesheet" href="${request.contextPath}${staticPath}/admin/plugins/bootstrap/css/bootstrap.min.css">
+
+<link href="${request.contextPath}${staticPath}/css/base.css" rel="stylesheet" type="text/css" />
+
+<link href="${request.contextPath}${staticPath}/css/index.css" rel="stylesheet" type="text/css" />
+    <script src="${request.contextPath}${staticPath}/admin/plugins/jquery/jquery-3.4.1.min.js"></script>
+    <script src="${request.contextPath}${staticPath}/admin/plugins/bootstrap/js/bootstrap.min.js"></script>
+
+
+</head>
+
+<body>
+	<#include "${request.contextPath}/base/header.html">
+	<!--轮播图  -->
+    <!-- 最主要的是三部分indicators(指标)、inner(内容)、carousel-control（导航） -->
+    <div class="pic carousel slide" id="lf" data-ride="carousel">
+        <!-- •data-target 属性：
+        取值 lf 定义的 ID 名或者其他样式识别符，
+        并且将其定义在轮播图计数器的每个 li 上。
+        data-slide-to 属性：
+        用来传递某个帧的下标，比如 data-slide-to="2"，
+        可以直接跳转到这个指定的帧（下标从0开始计），
+        同样定义在轮播图计数器的每个 li 上。 -->
+        <div class="picol">
+            <ol class="carousel-indicators">
+            <li class="active" data-target="#lf" data-slide-to="0"></li>
+            <li class="" data-target="#lf" data-slide-to="1"></li>
+
+        </ol>
+        </div>
+        
+        <div >
+            <div class="carousel-inner" role="listbox">
+                <div class="item active ">
+                    <img  alt="" src="${request.contextPath}/images/3.jpg">
+                </div>
+                <div class="item">
+                    <img src="${request.contextPath}/images/2019-09-29-banner.jpg" alt="" >
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- 产品服务 -->
+    <div class="in_product">
+        <div class="inall">
+        <div class="title">
+                <h3 class="inh2">产品服务&nbsp;/Product&nbsp;Business</h3>
+        </div>
+        <div class="in_box">
+            
+            <#list inProductMenus as menu>
+            <ul class="inul">
+            	<li class=""><i class="ini inliimg" style="background-position:${menu.icon};"></i></li>
+                <li class="f20 "><a href="${menu.url}" class="inlia"><b>${menu.title}</b></a></li>
+                <li><span class="inspan f12">${menu.content}</span></li>
+            </ul>
+            </#list>
+                
+            
+        </div>
+    </div>
+    </div>
+	<!-- <div class="in_product">
+		<div class="p_w">
+			<h2 class="in_title">
+				<span>产品业务</span> <i></i>
+			</h2>
+			<ul>
+				<#list inProductMenus as menu>
+				<li><a href="${menu.url}" class="in_product_icon${menu.id}">
+						<i style="background-position: ${menu.icon};"></i> <b>${menu.title}</b>
+						<span>${menu.content}</span>
+				</a></li>
+				</#list>
+			</ul>
+		</div>
+	</div> -->
+	<#include "${request.contextPath}/base/foot.html">
+</body>
+
+</html>

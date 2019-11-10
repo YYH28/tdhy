@@ -1,0 +1,106 @@
+<!-- 配置页面路径  -->
+<#assign base=request.contextPath/>
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta http-equiv="X-UA-Compatible" content="ie=edge">
+<title>图片列表</title>
+<!-- Bootstrap 3.3.7 -->
+<!-- <link rel="stylesheet"
+	href="${request.contextPath}/admin/plugins/bootstrap/css/bootstrap.min.css">
+Font Awesome
+<link rel="stylesheet"
+	href="${request.contextPath}/admin/plugins/font-awesome/css/font-awesome.min.css">
+Ionicons
+<link rel="stylesheet"
+	href="${request.contextPath}/admin/plugins/Ionicons/css/ionicons.min.css"> -->
+	
+	<link rel="stylesheet" href="${request.contextPath}${staticPath}/admin/plugins/bootstrap/css/bootstrap.min.css">  
+	<script src="${request.contextPath}${staticPath}/admin/plugins/jquery/jquery-3.4.1.min.js"></script>
+	<script src="${request.contextPath}${staticPath}/admin/plugins/bootstrap/js/bootstrap.min.js"></script>
+ <style type="text/css">
+ 
+ .a{
+ display:flex;
+ align-self: auto;}
+ a{
+ 	width: 80px;
+ 	height: 3
+ 	0px;
+ }
+
+</style> 
+</head>
+
+<body>
+
+	<div class="container1 imglist">
+	<h2>图片管理</h2>   
+	<br /> 
+	<a class="btn btn-info" href="/admin/album/toupload">上传图片</a>      
+	<table class="table table-hover">
+		<thead>
+			<tr>
+				<th>编号</th>
+				<th>图片地址</th>
+				<th>宽度</th>
+				<th>高度</th>
+				<th>名称</th>
+				<th>标签</th>
+				<th>图片</th>
+				<th>删除</th>
+			</tr>
+		</thead>
+		<tbody>
+	<#list albums as menu>
+				<tr>
+					<td>${menu.id}</td>
+					<td>${menu.imagePath}</td>
+					<td>${menu.width}</td>
+					<td>${menu.height}</td>
+					<td>${menu.name}</td>
+					<td>${menu.tags}</td>
+					
+					<td class="a"><img alt="${menu.name}" src="${menu.imagePath}" width="50%" height="50%;"></td>
+					<td><a class="btn btn-danger" onclick="deleteAlbum(this.id)" href="/admin/album/delete?id=${menu.id}">删除</a></td>
+				</tr>
+			</#list>  
+		</tbody>
+	</table>
+</div>
+
+	<!-- <div class="container-fluid  imglist">
+		<#list albums as album>
+		<div class="img-box">
+			<img alt="" src="${album.imagePath}" width="100%" height="100px;">
+			<span class="img-bar"> <span class="glyphicon glyphicon-trash"
+				id="${album.id}" aria-hidden="true" onclick="deleteAlbum(this.id)"></span>
+			</span>
+		</div>
+		</#list>
+	</div> -->
+	<!-- jQuery 3 -->
+	<script
+		src="${request.contextPath}/admin/plugins/jquery/jquery-3.4.1.min.js"></script>
+
+	<script type="text/javascript">
+		$(function() {
+
+			$(".imglist img")
+					.click(
+							function(e) {
+								console.log(e.currentTarget.currentSrc)
+								window.parent.document
+										.getElementById('imagePath').value = e.currentTarget.currentSrc;
+							})
+
+		})
+		function deleteAlbum(id) {
+			console.log(id);
+		}
+	</script>
+</body>
+</html>

@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <link href="https://cdn.bootcss.com/twitter-bootstrap/3.4.1/css/bootstrap-theme.css" rel="stylesheet">
+    <link href="https://cdn.bootcss.com/font-awesome/5.10.2/css/all.css" rel="stylesheet">
+    <link rel="stylesheet" href="./dist/css/fontawesome-iconpicker.min.css">
+    <script src="https://cdn.bootcss.com/jquery/3.4.1/jquery.min.js"></script>
+    <script src="https://cdn.bootcss.com/twitter-bootstrap/3.4.1/js/bootstrap.min.js"></script>
+    <script src="./dist/js/fontawesome-iconpicker.min.js"></script>
+</head>
+<body>
+    <div class="container" style="text-align: center ; padding-top: 100px;width:600px">
+        <div class="row">
+            <div class="col-md-12">
+                <div class="form-group">
+                    <input data-placement="bottomRight" class="form-control icp icp-auto" value="" type="text" />
+                    <span class="input-group-addon"></span>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script>
+        $(function () {
+            // 图标可以点击选中 icp-auto 操作图标元素
+            $('.icp-auto').iconpicker({
+                title: '请选择一个图标',
+                //  指定图标
+                //icons:['fa-github', 'fa-heart', 'fa-html5', 'fa-css3'],
+                // 添加其他图标 加入 bootstrap  glyphicon 字体图标
+                icons: $.merge(['glyphicon-home', 'glyphicon-repeat', 'glyphicon-search',
+                    'glyphicon-arrow-left', 'glyphicon-arrow-right', 'glyphicon-star'], $.iconpicker.defaultOptions.icons),
+                fullClassFormatter: function (val) {
+                    if (val.match(/^fa-/)) {
+                        return 'fa ' + val;
+                    } else {
+                        return 'glyphicon ' + val;
+                    }
+                },
+                component: '.input-group-addon', // 图标存放容器
+                /* Placements: inline topLeftCorner topLeft top topRight topRightCorner rightTop right rightBottom bottomRightCorner bottomRight bottom bottomLeft bottomLeftCorner leftBottom left leftTop*/
+                placement: 'bottomRightCorner',  // 图标容器位置
+            });
+
+            // 图标不可以点击, 绑定 .icp 元素
+            // $.iconpicker.batch('.icp', 'destroy');
+
+            // 点击下拉按钮显示图标
+            $('.btn-group>button').one("click", function () {
+                console.log(1);
+                $('.icp-dd').iconpicker({
+                    //title: 'Dropdown with picker',
+                    //component:'.btn > i'
+                });
+            });
+        });
+    </script>
+</body>
+
+</html>

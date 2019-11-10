@@ -1,0 +1,234 @@
+<!-- 配置页面路径  -->
+<#assign base=request.contextPath/>
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta http-equiv="X-UA-Compatible" content="ie=edge">
+<title>上传</title>
+<!-- Bootstrap 3.3.7 -->
+<link rel="stylesheet"
+	href="${request.contextPath}/admin/plugins/bootstrap/css/bootstrap.min.css">
+<link rel="stylesheet"
+	href="${request.contextPath}/admin/plugins/bootstrap-fileinput/css/fileinput.min.css">
+</head>
+
+<body>
+	<div class="container-fluid">
+		<form class="form-horizontal"
+			action="${request.contextPath}/admin/album/edit" method="post">
+			<!-- ${request.contextPath}/admin/album/edit -->
+			<input type="hidden" name="id">
+			<div class="box-body">
+				<div class="form-group">
+					<label for="inputName" class="col-sm-2 control-label">图片名称</label>
+					<div class="col-sm-10">
+						<input type="text" class="form-control" required="required"
+							id="inputName" name="name" placeholder="输入图片名称">
+					</div>
+				</div>
+
+				<div class="form-group">
+					<label for="inputWidth" class="col-sm-2 control-label">图片宽高</label>
+					<div class="col-sm-10 form-inline">
+						<input type="number" class="form-control" required="required"
+							id="inputWidth" name="width" placeholder="输入图片宽度"> <input
+							type="number" class="form-control" required="required"
+							id="inputHeight" name="height" placeholder="输入图片高度">
+
+						<div class="radio">
+							<label> <input type="radio" name="optionsRadios"
+								id="optionsRadios1" value="200"> 200X200
+							</label>
+						</div>
+						<div class="radio">
+							<label> <input type="radio" name="optionsRadios"
+								id="optionsRadios2" value="700"> 700X450
+							</label>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="form-group">
+				<label for="inputTags" class="col-sm-2 control-label">图片标志</label>
+				<div class="col-sm-10">
+					<input type="text" class="form-control" id="inputTags"
+						placeholder="输入图片标志如:花,菊花，庄严肃穆" name="tags">
+				</div>
+			</div>
+			<div class="form-group">
+				<label for="inputImageUrl" class="col-sm-2 control-label">图片地址</label>
+				<div class="col-sm-10 ">
+					<input type="text" class="form-control" id="inputImageUrl"
+						name="imagePath" placeholder="地址" readonly="readonly">
+				</div>
+			</div>
+			<div class="form-group">
+				<label for="picKey" class="col-sm-2 control-label">图片存储名称</label>
+				<div class="col-sm-10 ">
+					<input type="text" class="form-control" id="picKey"
+						name="picKey" placeholder="图片存储名称" readonly="readonly">
+				</div>
+			</div>
+			<div class="form-group">
+				<label for="inputCateType" class="col-sm-2 control-label">上传图片</label>
+				<div class="col-sm-10">
+					<input id="input-id" type="file" class="file" class="file-loading">
+
+				</div>
+			</div>
+
+			<div class="form-group">
+				<div class="col-sm-offset-2 col-sm-10">
+					<button type="reset" class="btn btn-default">取消</button>
+					<button type="submit" class="btn btn-info pull-right">保存</button>
+				</div>
+			</div>
+
+
+		</form>
+	</div>
+	<!-- jQuery 3 -->
+	<!-- jQuery 3 -->
+	<script src="${request.contextPath}/admin/plugins/jquery/jquery-3.4.1.min.js"></script>
+	<!-- piexif  -->
+	<script
+		src="${request.contextPath}/admin/plugins/bootstrap-fileinput/js/plugins/piexif.min.js"></script>
+
+	<!-- purify  -->
+	<script
+		src="${request.contextPath}/admin/plugins/bootstrap-fileinput/js/plugins/purify.min.js"></script>
+
+	<!-- fileinput  -->
+	<script
+		src="${request.contextPath}/admin/plugins/bootstrap-fileinput/js/fileinput.min.js"></script>
+
+	<!-- Bootstrap 3.3.7 -->
+	<script
+		src="${request.contextPath}/admin/plugins/bootstrap/js/bootstrap.min.js"></script>
+
+	<!-- fileinput  -->
+	<script
+		src="${request.contextPath}/admin/plugins/bootstrap-fileinput/js/locales/zh.js"></script>
+	<script type="text/javascript">
+		var obj = $("#input-id");
+		var option = {}
+		option.uploadUrl = "${request.contextPath}/file/uploadimageone";
+		option.uploadAsync = true;
+		option.language = "zh";
+		option.showCaption = true;
+		option.showUpload = true;
+		option.showRemove = true;
+		option.showPreview = true;
+		option.resizeImage = true;
+		option.resizePreference = 'width';
+		option.browseClass = "btn btn-primary";
+		option.uploadLabel = "上传";
+		option.enctype = "multipart/form-data";
+		option.dropZoneEnabled = false;
+		option.allowedFileExtensions = [ "png", "jpg", "gif" ];
+		option.maxFileCount = 5;
+		$("#inputWidth").blur(function() {
+
+			width = $("#inputWidth").val();
+			obj.fileinput('refresh', {
+				maxImageWidth : width
+			})
+
+			if (isEmpty(width)) {
+				return;
+			}
+		})
+		$("#inputHeight").blur(function() {
+			height = $("#inputHeight").val();
+
+			obj.fileinput('refresh', {
+				maxImageHeight : height
+			})
+			if (isEmpty(height)) {
+				return;
+			}
+		})
+
+		$(":radio").click(function(e) {
+			if (e.target.defaultValue == 200) {
+
+				obj.fileinput('refresh', {
+					maxImageHeight : 200,
+					maxImageWidth : 200
+				})
+
+				$("#inputWidth").val(200)
+				$("#inputHeight").val(200)
+
+			}
+			if (e.target.defaultValue == 700) {
+
+				obj.fileinput('refresh', {
+					maxImageHeight : 450,
+					maxImageWidth : 700
+				})
+				$("#inputWidth").val(700)
+				$("#inputHeight").val(450)
+
+			}
+		});
+
+		//with plugin options
+
+		obj.fileinput(option/* ,{
+					uploadUrl : "/file/uploadimageone",//上传的地址
+					uploadAsync : true, //异步上传
+					language : "zh", //设置语言
+					showCaption : true, //是否显示标题
+					showUpload : true, //是否显示上传按钮
+					showRemove : true, //是否显示移除按钮
+					showPreview : true, //是否显示预览按钮
+					resizeImage : true, //调整图片的宽度
+					maxImageWidth : 200,
+					maxImageHeight : 200,
+					resizePreference : 'width',
+					browseClass : "btn btn-primary", //按钮样式
+					uploadLabel : "上传", //设置上传按钮的汉字
+					enctype : 'multipart/form-data',
+					dropZoneEnabled : false, //是否显示拖拽区域
+					allowedFileExtensions : [ "png", "jpg", "gif" ], //接收的文件后缀
+					maxFileCount : 5
+
+				} */ ).on("fileuploaded", function(event, data) {
+			var response = data.response;
+			if (response.uploaded == 1) {
+
+				$("#inputImageUrl").val(response.url)
+				$("#picKey").val(response.fileName)
+				console.log(response)
+			} else {
+				alert("文件上传失败")
+			}
+
+			console.log(response);
+
+		}).on('fileerror', function(event, data, msg) { //一个文件上传失败
+			alert('文件上传失败！' + msg);
+
+		}).on("filebatchselected", function(event, files) {
+			console.log(files)
+		}).on('fileselect', function(event, numFiles, label) {
+
+		});
+		;
+
+		function isEmpty(obj) {
+			if (typeof obj == "undefined" || obj == null || obj == "") {
+				return true;
+			} else {
+				return false;
+			}
+		}
+	</script>
+
+</body>
+
+</html>
