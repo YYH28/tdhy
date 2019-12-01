@@ -3,8 +3,10 @@ package com.yyh.tdhy.config;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.autoconfigure.condition.ConditionalOnMissingBean;
 import org.springframework.context.annotation.Configuration;
+import org.springframework.core.Ordered;
 import org.springframework.web.servlet.config.annotation.InterceptorRegistry;
 import org.springframework.web.servlet.config.annotation.ResourceHandlerRegistry;
+import org.springframework.web.servlet.config.annotation.ViewControllerRegistry;
 import org.springframework.web.servlet.config.annotation.WebMvcConfigurationSupport;
 import org.springframework.web.servlet.config.annotation.WebMvcConfigurer;
 
@@ -34,4 +36,10 @@ public class WebConfigurer implements WebMvcConfigurer {
 		registry.addInterceptor(loginInterceptor).addPathPatterns("/admin/**");
 	}
 
+	// 配置localhost:8080默认启动页
+	@Override
+	public void addViewControllers(ViewControllerRegistry registry) {
+		registry.addViewController("/").setViewName("forward:/tdhy/index");
+		registry.setOrder(Ordered.HIGHEST_PRECEDENCE);
+	}
 }

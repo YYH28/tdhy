@@ -42,14 +42,23 @@
     width: 822px;
     text-align: right;
 }
+.btns{
+	margin-left: 5px;
+	color: #494949;
+}
+.btns:hover{
+	color: #494949;
+}
 .cclub{
     color: #f15a22;
+    margin:0 5px;
 }
 .topli{
     margin-left: 20px;
 }
 .navitems{
     color: black;
+    margin:0 5px;
 }
 .navitems i{
     background: url(../../images/base/150602_icon01.png) no-repeat;
@@ -78,19 +87,16 @@
 /* 导航栏 */
 .nav{
     background-color: #182428;
-    box-sizing: border-box;
-    padding: 0 150px;
+	display: flex;
+    justify-content:center;
 }
-.navul{
-    
+.navul{	
     display: flex;
-    justify-content: space-around;
-    align-items: center;
-    /* height: 60px; */
-    
+    justify-content:center;
+    align-items: center; 
 }
 .navli{
-    width: 120px;
+    /* width: 120px; */
     height: 60px;
     box-sizing: border-box;
     border-top:5px  solid #182428;
@@ -98,6 +104,7 @@
     align-items: center;
     position: relative;
     justify-content: center;
+    padding: 0;
     
 }
 
@@ -110,30 +117,25 @@
     border-bottom: none !important;
     
 }
-.navcld{
+.navsp{
+    line-height: 55px;
+    display: flex;
+    align-items: center;
     color: #fff;
-    
-    
+    padding: 0 28px;
 }
-.navli:hover,.navli:hover .navcld{
-    background-color: #fff;
-    color: #000;
-    
+.navsp:focus{
+	color: #fff;
 }
-.navcld:hover{
-    color: #000;
-}
+
 .navlist{
     display: none;
     position: absolute;
     background: url(../../images/base/150602_bg04_1.png) repeat;
     top: 100%;
-    z-index:999;
+    z-index:4;
 }
-.navli:hover .navlist{
-    display: flex;
-    flex-flow:row nowrap ;
-}
+
 .navlistli{
     height: 130px;
     width: 90px;
@@ -143,27 +145,41 @@
     
 }
 .navlista{
-    
-    text-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
 }
 .navlist_menu{
-    background: url(../../images/base/150626_navbg01_1.png) no-repeat;
+    background: url(../../images/base/150626_navbg01_1.png) no-repeat 50%;
     width: 57px;
     height: 57px;
     display: block;
-    
 }
-.navsp{
-    line-height: 50px;
-    color: #787d81;
-    display: flex;
-    align-items: center;
-}
+
 .navs{
 	color: #f12a22;
 }
-
- .navlist01_menu01i{background-position:0 0;}
+.navChange{
+	background-color: #fff ;
+    color: #000;
+}
+.navChange a{
+    color: #000 !important;
+}
+.navChild{
+    display: flex;
+    flex-flow:row nowrap ;
+}
+.navChildSpan{
+	width:104px !important;
+	line-height: 30px;
+	color:#787d81;
+	text-align: center;
+	display: inline-block;
+}
+/*图片位置
+.navlist01_menu01i{background-position:0 0;}
 .navlist01_menu02i{background-position:-103px 0;}
 .navlist01_menu03i{background-position:-207px 0;}
 .navlist01_menu04i{background-position:-311px 0;}
@@ -195,4 +211,17 @@
 .navlist07_menu01i{background-position:0 -343px;}
 .navlist07_menu02i{background-position:-103px -343px;}
 .navlist07_menu03i{background-position:-207px -343px;}
-.navlist07_menu04i{background-position:-311px -343px;}
+.navlist07_menu04i{background-position:-311px -343px;} */
+
+/* .navli:hover,.navli:hover .navcld{
+    background-color: #fff;
+    color: #000;
+} */
+/* .navli:hover .navlist{
+    display: flex;
+    flex-flow:row nowrap ;
+}
+
+.navcld:hover{
+    color: #000;
+} */

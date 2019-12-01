@@ -1,106 +1,151 @@
-
 <!DOCTYPE html>
 <html>
-
 <head>
-<meta charset="UTF-8">
-<!--告诉IE浏览器以最高级模式渲染当前网页-->
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta http-equiv="X-UA-Compatible" content="ie=edge">
-<title>天地华宇物流物流官方网站</title>
-<!-- 小标图 -->
-<link rel="Shorcut Icon" href="${request.contextPath}${staticPath}/images/ico.png"
-	type="image/x-icon" />
-<!-- 关键字搜索 -->
-<meta name="Keywords"
-	content="公路快运,物流货运,天地华宇,天地华宇物流,
+    <meta charset="UTF-8">
+    <!--告诉IE浏览器以最高级模式渲染当前网页-->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>天地华宇物流物流官方网站</title>
+    <!-- 小标图 -->
+    <link rel="Shorcut Icon" href="${request.contextPath}${staticPath}/images/ico.png" type="image/x-icon" />
+    <!-- 关键字搜索 -->
+    <meta name="Keywords" content="公路快运,物流货运,天地华宇,天地华宇物流,
     天地华宇物流查询,华宇物流,华宇物流查询,天地华宇俱乐部,华宇俱乐部，上汽物流" />
-<!-- 只要设置了description页面描述，那么百度搜索结果，就能够显示这些语句，
+    <!-- 只要设置了description页面描述，那么百度搜索结果，就能够显示这些语句，
         这个技术叫做SEO（search engine optimization,搜索引擎优化 -->
-<meta name="Description"
-	content="&quot天地华宇是国家第一批
+    <meta name="Description" content="&quot天地华宇是国家第一批
     &quotAAAAA&quot级资质的物流企业，其运营网络是中国最大的公路快运网络之一。
     可通过天地华宇官方网站实现在线下单、物流单号查询、物流网点查询、物流价格查询、
     随时随地高效管理您的快件。您的尊贵托付，我们全心承递！" />
 
-<link rel="stylesheet" href="${request.contextPath}${staticPath}/admin/plugins/bootstrap/css/bootstrap.min.css">
-
-<link href="${request.contextPath}${staticPath}/css/base.css" rel="stylesheet" type="text/css" />
-
-<link href="${request.contextPath}${staticPath}/css/index.css" rel="stylesheet" type="text/css" />
-    <script src="${request.contextPath}${staticPath}/admin/plugins/jquery/jquery-3.4.1.min.js"></script>
-    <script src="${request.contextPath}${staticPath}/admin/plugins/bootstrap/js/bootstrap.min.js"></script>
-
-
+    <link rel="stylesheet" href="${request.contextPath}${staticPath}/admin/plugins/bootstrap/css/bootstrap.min.css">
+    <link href="${request.contextPath}${staticPath}/css/base.css" rel="stylesheet" type="text/css" />
+    <!-- <link rel="stylesheet" href="${request.contextPath}${staticPath}/css/basecss/headerbase.css" type="text/css">
+	<link rel="stylesheet" href="${request.contextPath}${staticPath}/css/basecss/foot.css"> -->
+	<link href="${request.contextPath}${staticPath}/css/index.css" rel="stylesheet" type="text/css" />
+     <script src="${request.contextPath}${staticPath}/admin/plugins/jquery/jquery-3.4.1.min.js"></script>
 </head>
 
 <body>
-	<#include "${request.contextPath}/base/header.html">
-	<!--轮播图  -->
-    <!-- 最主要的是三部分indicators(指标)、inner(内容)、carousel-control（导航） -->
-    <div class="pic carousel slide" id="lf" data-ride="carousel">
-        <!-- •data-target 属性：
-        取值 lf 定义的 ID 名或者其他样式识别符，
-        并且将其定义在轮播图计数器的每个 li 上。
-        data-slide-to 属性：
-        用来传递某个帧的下标，比如 data-slide-to="2"，
-        可以直接跳转到这个指定的帧（下标从0开始计），
-        同样定义在轮播图计数器的每个 li 上。 -->
-        <div class="picol">
-            <ol class="carousel-indicators">
-            <li class="active" data-target="#lf" data-slide-to="0"></li>
-            <li class="" data-target="#lf" data-slide-to="1"></li>
-
-        </ol>
+    <#include "${request.contextPath}/base/header.html">
+        <!--轮播图  -->
+        <div class="pic" id="lf">
+            <div class="picDiv" id="picDiv">
+                <img alt="" src="${request.contextPath}/images/3.jpg" class="picImg active">
+                <img src="${request.contextPath}/images/2019-09-29-banner.jpg" alt="" class="picImg">
+                <img src="${request.contextPath}/images/3-1.jpg" alt="" class="picImg">
+            </div>
+            <div class="picul">
+                <ul id="picUl">
+		            <!-- <li class="nr active"></li>
+		     		<li class="nr"></li> -->
+                </ul>
+            </div>
         </div>
-        
-        <div >
-            <div class="carousel-inner" role="listbox">
-                <div class="item active ">
-                    <img  alt="" src="${request.contextPath}/images/3.jpg">
+        <!-- 产品服务 -->
+        <div class="in_product">
+            <div class="inall">
+                <div class="title">
+                    <h3 class="inh2">产品服务&nbsp;/Product&nbsp;Business</h3>
                 </div>
-                <div class="item">
-                    <img src="${request.contextPath}/images/2019-09-29-banner.jpg" alt="" >
+                <div class="in_box">
+                    <#list inProductMenus as menu>
+                        <ul class="inul">
+                            <li class=""><i class="ini inliimg" style="background-position:${menu.icon};"></i></li>
+                            <li class="f20 "><a href="${menu.url}" class="inlia"><b>${menu.title}</b></a></li>
+                            <li><span class="inspan f12">${menu.content}</span></li>
+                        </ul>
+                    </#list>
                 </div>
             </div>
         </div>
-    </div>
-    <!-- 产品服务 -->
-    <div class="in_product">
-        <div class="inall">
-        <div class="title">
-                <h3 class="inh2">产品服务&nbsp;/Product&nbsp;Business</h3>
-        </div>
-        <div class="in_box">
-            
-            <#list inProductMenus as menu>
-            <ul class="inul">
-            	<li class=""><i class="ini inliimg" style="background-position:${menu.icon};"></i></li>
-                <li class="f20 "><a href="${menu.url}" class="inlia"><b>${menu.title}</b></a></li>
-                <li><span class="inspan f12">${menu.content}</span></li>
-            </ul>
-            </#list>
-                
-            
-        </div>
-    </div>
-    </div>
-	<!-- <div class="in_product">
-		<div class="p_w">
-			<h2 class="in_title">
-				<span>产品业务</span> <i></i>
-			</h2>
-			<ul>
-				<#list inProductMenus as menu>
-				<li><a href="${menu.url}" class="in_product_icon${menu.id}">
-						<i style="background-position: ${menu.icon};"></i> <b>${menu.title}</b>
-						<span>${menu.content}</span>
-				</a></li>
-				</#list>
-			</ul>
-		</div>
-	</div> -->
-	<#include "${request.contextPath}/base/foot.html">
+        <!-- 市场活动 -->
+        <div class="in_promotion">
+        	<div class="promotion_all">
+		        <div class="promotion_title">
+		            <h3 class="inh2">市场活动&nbsp;/Market&nbsp;Activities</h3>
+		            <a></a>
+		        </div>
+		        <div class="promotion_list">
+			        <#list inPromotionMenus as inPromotionMenus>
+			        	<div class="promotion_listDiv">
+			        		<img alt="" src="${inPromotionMenus.image}">
+			        		<div class="list_content">
+			        			<div class="list_title">${inPromotionMenus.title}</div>
+			        			<div class="list_status">${inPromotionMenus.status}</div>
+			        			<br>
+			        			<div class="list_time">${inPromotionMenus.time}</div>
+			        			<div class="list_place">${inPromotionMenus.place}</div>
+			        		</div>
+			        	</div>
+			        </#list>
+		        </div>
+	        </div>
+   		</div>
+   		<!-- 新闻 -->
+   		<div class="in_news">
+        	<div class="news_all">
+		        <div class="news_title">
+		            <h3 class="inh2">新闻&nbsp;/News</h3>
+		            <a></a>
+		        </div>
+		        <div class="news_content">
+		        	<div class="news_list">
+		        	<#list inNewsMenus as inNewsMenus>
+		        		<div class="news_div">
+			        		<a>${inNewsMenus.title}</a>
+			        		<span>${inNewsMenus.time}</span>
+		        		</div>
+		        	</#list>
+		        	</div>
+		        	<div id="newsImage">
+			        	<div class="news_image" id="news_image">
+			        		<img alt="" src="${request.contextPatth}/images/jM5OZxIyK3.png" class="news_pic active">
+			        		<img alt="" src="${request.contextPatth}/images/PaLMYbmLZh.png" class="news_pic">
+			        		<img alt="" src="${request.contextPatth}/images/pJCAkP5qIJ.png" class="news_pic">
+			        		<img alt="" src="${request.contextPatth}/images/SBNBUA1KZP.png" class="news_pic">
+			        	</div>
+			        	<ul id="newsUl">
+			        	
+			        	</ul>
+		        	</div>
+		        </div>
+	        </div>
+   		</div>
+   		<!-- 合作伙伴 -->
+   		<div class="friend">
+   			<div>
+	   			<div class="friend_tab" id='friend_tab'>
+	   				<div class="friend_tabAll friend_tabAllHover" id="friend" onmouseover="friend(this)">合作伙伴</div>
+	   				<div class="friend_tabAll" id="map" onmouseover="map(this)">快速导航</div>
+	   			</div>
+	   			<div class="friend_list" id="friend_list">
+	   				<div class="friend_image"></div>
+	   				<div class="friend_image1"></div>
+	   				<div class="friend_image2"></div>
+	   				<div class="friend_image3"></div>
+	   				<div class="friend_image4"></div>
+	   				<div class="friend_image5"></div>
+	   				<div class="friend_image6"></div>
+	   				<div class="friend_image7"></div>
+	   			</div>
+	   			<div class="site_map" id="site_map">
+	   				<#list navigationVms as navigationDTO>
+	                    <#if navigationDTO.navname!="首页">
+			   				<div class="link_row">
+			   				<#list navigationDTO.navigationChildren as children>
+			   					<ul>
+			   						<li><a>${children.navname}</a></li>
+			   					</ul>
+			   					</#list>
+			   				</div>
+		   				</#if>
+		   			</#list>
+	   			</div>
+   			</div>
+   			
+   		</div>
+        <#include "${request.contextPath}/base/foot.html">
 </body>
 
 </html>

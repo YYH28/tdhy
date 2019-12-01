@@ -38,7 +38,9 @@
 		<table tableName="user"></table>  
 		<table tableName="back_menu"></table>
 		<table tableName="sort"></table>
-		<table tableName="article"></table>-->
+		<table tableName="article"></table>
 		<table tableName="album"></table>
+		<table tableName="in_promotion"></table>-->
+		<table tableName="in_news"></table>
 	</context>
 </generatorConfiguration>
