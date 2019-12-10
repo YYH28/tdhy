@@ -16,12 +16,12 @@ public class InProductServiceImpl implements InProductService {
 	private InProductMapper inProductMapper;
 
 	@Override
-	public List<InProduct> getAll() throws Exception {
+	public List<InProduct> getAll() {
 		return inProductMapper.selectByExample(null);
 	}
 
 	@Override
-	public int add(InProduct t) throws Exception {
+	public int add(InProduct t) {
 		try {
 			inProductMapper.insert(t);
 			return 1;
