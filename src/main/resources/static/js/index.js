@@ -70,11 +70,7 @@
 			var controller=$(controller);
 			var mod=$(mod);
 			var pic=$(parent);
-<<<<<<< HEAD
 			var autoPlayTime=3000;
-=======
-			var autoPlayTime=2000;
->>>>>>> branch 'master' of https://gitee.com/leaf28/tdhy.git
 			var imgNum=mod.length-1;
 			var auto;
 			console.log(controller)
