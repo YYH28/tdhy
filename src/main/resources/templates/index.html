@@ -24,7 +24,10 @@
 	<link rel="stylesheet" href="${request.contextPath}${staticPath}/css/basecss/foot.css"> -->
 	<link href="${request.contextPath}${staticPath}/css/index.css" rel="stylesheet" type="text/css" />
      <script src="${request.contextPath}${staticPath}/admin/plugins/jquery/jquery-3.4.1.min.js"></script>
+<<<<<<< HEAD
      <script src="${request.contextPath}${staticPath}/js/index.js"></script>
+=======
+>>>>>>> branch 'master' of https://gitee.com/leaf28/tdhy.git
 </head>
 
 <body>
@@ -35,9 +38,7 @@
             <#list albumMenus as menus>
             	<img alt="" src="${menus.imagePath}" class="picImg">
             </#list>
-                <!-- <img alt="" src="${request.contextPath}/images/3.jpg" class="picImg active">
-                <img src="${request.contextPath}/images/2019-09-29-banner.jpg" alt="" class="picImg">
-                <img src="${request.contextPath}/images/3-1.jpg" alt="" class="picImg"> -->
+
             </div>
             <div class="picul">
                 <ul id="picUl">
@@ -138,8 +139,13 @@
 	                    <#if navigationDTO.navname!="首页">
 			   				<div class="link_row">
 			   				<#list navigationDTO.navigationChildren as children>
+<<<<<<< HEAD
 			   					<ul>
 			   						<li><a>${children.navname}</a></li>
+=======
+			   					<ul>
+			   						<li><a>${children.navname}</a></li>
+>>>>>>> branch 'master' of https://gitee.com/leaf28/tdhy.git
 			   					</ul>
 			   					</#list>
 			   				</div>

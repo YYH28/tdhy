@@ -37,6 +37,7 @@
 //		大轮播图
 		var nameBig='picImg';
 		var nameControllerBig='nr';
+
 		console.log(document.getElementById("picDiv").firstElementChild)
 		document.getElementById("picDiv").firstElementChild.className=nameBig+' active';
 		appendUl('#picDiv','#picUl',nameControllerBig);
@@ -74,6 +75,7 @@
 			var mod=$(mod);
 			var pic=$(parent);
 			var autoPlayTime=2000;
+
 			var imgNum=mod.length-1;
 			var auto;
 			console.log(controller)
