@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta http-equiv="X-UA-Compatible" content="ie=edge">
+<title>公司简介</title>
+
+<script type="text/javascript" src="${request.contextPath}/js/jquery-1.6.2.min.js"></script>
+<script type="text/javascript" src="${request.contextPath}/js/jquery.selectui.js"></script>
+<style type="text/css">
+ul, ol {
+	list-style: none;
+}
+
+.p1 {
+	font-size: 14px;
+	font-weight: bold; /*加粗*/
+	text-align: center;
+}
+
+.titlenext {
+	width: 748px;
+	height: 44px;
+	background-color: #b4b4b4;
+	padding-left: 22px;
+	color: #ffffff;
+	display: flex;
+	align-items: center;
+}
+
+.col_right {
+	width: 770px;
+	background-color: #fff;
+	height: 997px;
+}
+
+.image {
+	width: 770px;
+	height: 150px;
+	margin-bottom: 35px;
+}
+
+.mb10{margin-bottom:10px;}
+.news_content p{line-height:24px;color:#666;}
+.news_content p a{color:#f15a22; text-decoration:underline;}
+</style>
+
+</script>
+</head>
+</head>
+<body>
+	<div class="col_right">
+		<div class="image">
+			<img src="${request.contextPath}${staticPath}/images/help_banner.jpg"
+				alt="关于华宇">
+		</div>
+		<div class="titlenext">
+			<h3>经济快运</h3>
+		</div>
+		<div class="news_content">
+					<div style="margin-bottom:25px;">
+						<p class="f14 mb10"><strong style="color:#000">经济快运基本介绍</strong></p>
+						<p>　　拥有覆盖全国的公路快运网络</p>
+						<p>　　以站到站的运输方式，在全国500个城市的2500家网点提供取送货服务</p>
+						<p>　　经济实惠，为客户提供经济实用的全国性标准零担公路运输服务</p>
+						<p>　　运输快捷，主要中心城市之间的运输时间为2-4天，市县级城市则为3-6天</p>
+					</div>
+					<p style="text-align:center"><img src="${request.contextPath}${staticPath}/images/gl.jpg" width="500" /></p>
+				</div>
+	</div>
+</body>
+</html>

@@ -12,4 +12,6 @@ public interface NavigationService extends BaseService<Navigation, Integer> {
 	public List<NavigationVm> getAllNavVm() throws Exception;
 
 	public List<Navigation> getMenuByPid(Integer pid) throws Exception;
+
+	public List<NavigationVm> getThirdNavVm(Integer id) throws Exception;
 }

@@ -1,0 +1,369 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta http-equiv="X-UA-Compatible" content="ie=edge">
+<title>公司简介</title>
+
+<script type="text/javascript" src="${request.contextPath}/js/jquery-1.6.2.min.js"></script>
+<script type="text/javascript" src="${request.contextPath}/js/jquery.selectui.js"></script>
+<style type="text/css">
+ul, ol {
+	list-style: none;
+}
+
+.p1 {
+	font-size: 14px;
+	font-weight: bold; /*加粗*/
+	text-align: center;
+}
+
+.titlenext {
+	width: 748px;
+	height: 44px;
+	background-color: #b4b4b4;
+	padding-left: 22px;
+	color: #ffffff;
+	display: flex;
+	align-items: center;
+}
+
+.col_right {
+	width: 770px;
+	background-color: #fff;
+	height: 997px;
+}
+
+.image {
+	width: 770px;
+	height: 150px;
+	margin-bottom: 35px;
+}
+/*常见答疑*/
+.questions {
+	min-height: 411px;
+	_height: 411px;
+	_overflow: visible;
+}
+
+.question {
+	height: 40px;
+	line-height: 40px;
+	cursor: pointer;
+}
+
+.question strong, .Milestones_tit strong {
+	font-weight: normal;
+}
+
+.font-org {
+	color: #f15a22;
+}
+
+.questions .answers {
+	color: #808080;
+	display: none;
+	padding: 0 0 15px 19px;
+}
+
+.questions .unstyled li {
+	border-top: 1px solid #cecece;
+}
+
+.questions .unstyled:last-child li {
+	border-bottom: 1px solid #cecece;
+}
+
+.questions .icon {
+	display: inline-block;
+	vertical-align: middle;
+	background: url(${request.contextPath}${staticPath}/images/150602_icon12.png) no-repeat;
+	width: 9px;
+	height: 6px;
+	margin-right: 5px;
+}
+
+.questions .icon-arrow-up {
+	background-position: 0 0;
+}
+
+.questions .icon-arrow-down {
+	background-position: 0 -16px;
+}
+/*资料下载*/
+</style>
+<script type="text/javascript">
+	$(function() {
+		$("#questions").delegate(
+				".question",
+				"click",
+				function() {
+					var n;
+					$(".answers").hide();
+					$(".question").removeClass("font-org");
+					$(".question i").removeClass("icon-arrow-up").addClass(
+							"icon-arrow-down");
+					return $(this).next().toggle(), $(this).toggleClass(
+							"font-org"), n = $(this).find("i"), n
+							.hasClass("icon-arrow-up") ? n.removeClass(
+							"icon-arrow-up").addClass("icon-arrow-down") : n
+							.removeClass("icon-arrow-down").addClass(
+									"icon-arrow-up")
+				});
+	})
+
+	function searchCheck() {
+		var key = $.trim($("#searchCondition_input").val());
+		if (key == "" || key.length > 50) {
+			return false;
+		} else if (key == $.trim($("#searchCondition_input").attr("ov"))) {
+			$("#searchCondition_input").val("");
+		}
+		return true;
+	}
+</script>
+</head>
+</head>
+<body>
+	<div class="col_right">
+		<div class="image">
+			<img src="${request.contextPath}${staticPath}/images/help_banner.jpg"
+				alt="关于华宇">
+		</div>
+		<div class="titlenext">
+			<h3>公司简介</h3>
+		</div>
+		<div class="questions" id="questions">
+			<ul class="unstyled">
+				<li>
+					<div class="question">
+						<i class="icon icon-arrow-down"></i> <strong>我想了解你们公司主要提供哪些产品和服务？</strong>
+					</div>
+					<div class="answers">您好，我们主要为您提供公路运输服务。其中有定日达、普通快运、整车特运三项运输方式。除此之外，我们还可为您提供包装、保价、提、送货等其他多项增值服务项目，期待与您的合作。</div>
+				</li>
+			</ul>
+
+			<ul class="unstyled">
+				<li>
+					<div class="question">
+						<i class="icon icon-arrow-down"></i> <strong>我想了解下你们公司哪些货物不能承运呢？</strong>
+					</div>
+					<div class="answers">您好，根据国家道路安全法律法规，易燃、易爆，有毒、有腐蚀性等禁运品是我们坚决不可承运的，其他还有多种限运品类，具体您可拔打400-808-6666客服热线进行具体咨询。</div>
+				</li>
+			</ul>
+
+			<ul class="unstyled">
+				<li>
+					<div class="question">
+						<i class="icon icon-arrow-down"></i> <strong>货物发运按什么标准收取运费？</strong>
+					</div>
+					<div class="answers">您好，我们的收费标准是考虑到您所发货物的体积与重量，比如棉花与铁块，一个为轻货，一个为重货，所以收费取向就会不同。具体我们是根据一定的比例进行收费的。</div>
+				</li>
+			</ul>
+
+			<ul class="unstyled">
+				<li>
+					<div class="question">
+						<i class="icon icon-arrow-down"></i> <strong>如何区分轻货还是重货呢？</strong>
+					</div>
+					<div class="answers">货物的总重量（KG）和总体积（m3）的比值大于或等于210为重货，按重量计费；若比值低于210为轻货，按体积计费。如有疑问请联系当地网点咨询。</div>
+				</li>
+			</ul>
+
+			<ul class="unstyled">
+				<li>
+					<div class="question">
+						<i class="icon icon-arrow-down"></i> <strong>你们公司运输货物安全吗？</strong>
+					</div>
+					<div class="answers">天地华宇隶属于上汽物流板块，也是国家第一批"AAAAA"级资质的物流企业。自1995年成立，具有多年的专业物流操作经验，无论在竞争实力、专业性、规范化性等方面都具有不可比拟的绝对优势。同时，我们拥有以“准时、安全、优质服务”为核心的“定日达”产品，用更加优质的服务保证您货物的安全性。</div>
+				</li>
+			</ul>
+
+			<ul class="unstyled">
+				<li>
+					<div class="question">
+						<i class="icon icon-arrow-down"></i> <strong>货物运输，对外包装有什么要求吗？</strong>
+					</div>
+					<div class="answers">您好，为了您货物安全的运送至目的地，需要您的货物有坚实、可靠的外包装，且适合长途运输的要求。同时，如果您不方便为货物包装，我们也可为您提供包装服务。</div>
+				</li>
+			</ul>
+
+			<ul class="unstyled">
+				<li>
+					<div class="question">
+						<i class="icon icon-arrow-down"></i> <strong>如何正确包装？</strong>
+					</div>
+					<div class="answers">
+						常见包装安全隐患：</br> 一、纸箱多次重复使用，以致运输过程中失去保护作用，导致货物损坏。</br>
+						提示：避免使用不具保护力的纸箱，及时更换新的包装箱。</br>
+						二、包装与货物的重量或体积不相匹配，在运输过程中易包装变形、破裂、内物松动或漏出散失。</br>
+						提示：根据货物的重量或体积选择包装，包装货物时一定要密封、加固。</br> 三、
+						随意简单包装，而不根据货物类别特点选择包装，导致货物的破损、丢失、潮湿等。</br> 提示：</br>
+						1、液体胶状物运输时因摇晃易飞溅、渗漏，在包装时应密封好，再用胶带加固，在包装盒外多加一层包装，同时在包 装内添加填充物减少碰撞。</br>
+						2、服装等软性货物和小五金等货物除用纸箱包装之外，必须在外加上有纤维袋包装，有防水功能最佳。</br>
+						3、小件货物零散包装，因体积太小，容易导致丢失，通常使用纤袋包装。</br>
+						4、贵重品、精密产品、易碎品、流质品、机械零件、仪器、金属制品、高比重物品以及散落容易丢失的物品等，除用
+						普通纸箱包装外，必须添加木架包装，加固又防挤压，保障货物安全。</br> 5、小件电子产品在包装时应添加防震填充物（泡沫等材料），减少碰撞。</br>
+						6、未采用木架包装的较重货物必须用打包带加固。
+					</div>
+				</li>
+			</ul>
+
+			<ul class="unstyled">
+				<li>
+					<div class="question">
+						<i class="icon icon-arrow-down"></i> <strong>你们有代收货款的服务吗？</strong>
+					</div>
+					<div class="answers">您好，我们可以提供代收货款服务，让你足不出户，收款无忧。</div>
+				</li>
+			</ul>
+
+			<ul class="unstyled">
+				<li>
+					<div class="question">
+						<i class="icon icon-arrow-down"></i> <strong>我想做货到付款的业务，你们公司可以操作吗？</strong>
+					</div>
+					<div class="answers">您好，我们是可以提供货到付款的业务。</div>
+				</li>
+			</ul>
+
+			<ul class="unstyled">
+				<li>
+					<div class="question">
+						<i class="icon icon-arrow-down"></i> <strong>你们公司是门到门服务的吗？</strong>
+					</div>
+					<div class="answers">您好，我们目前是站到站的服务模式，但我们可以提供提、送货的增值服务。只要您支付一定的费用，我们就可提供门到门的服务。</div>
+				</li>
+			</ul>
+
+			<ul class="unstyled">
+				<li>
+					<div class="question">
+						<i class="icon icon-arrow-down"></i> <strong>我要发货，你们公司发货有优惠价吗？</strong>
+					</div>
+					<div class="answers">您好，真实的优惠不应是简单的体现在价格的优惠，而是在不额外增加客户费用的基础上，积极地提升服务的价值含量，这才是我们提供的重要优惠。同时，今后，我们也会根据不同客户的实际情况，制订出更多的个性化服务及优惠政策，让我们的客户享受更多元化的优质服务。</div>
+				</li>
+			</ul>
+
+			<ul class="unstyled">
+				<li>
+					<div class="question">
+						<i class="icon icon-arrow-down"></i> <strong>什么样的货物能发定日达？</strong>
+					</div>
+					<div class="answers">您好，只要您的货物单件重量不超过500kg、体积不超过2个立方，单边在3米以下，且在我们开通定日达服务路线的前提下，我们都可以为您提供准时、安全、服务的定日达服务。</div>
+				</li>
+			</ul>
+
+			<ul class="unstyled">
+				<li>
+					<div class="question">
+						<i class="icon icon-arrow-down"></i> <strong>我的货物发出后，可以通过哪些方式查询？</strong>
+					</div>
+					<div class="answers">
+						您好，为方便您及时了解您货物的具体状态，我们为您提供多种查询方式：<br />
+						1、网上查询：输入您的运单编号，通过网站货物跟踪、在线客服模块进行查询；<br />
+						2、电话查询：拔打400-808-6666客服热线、或当地营业网点电话进行查询。
+					</div>
+				</li>
+			</ul>
+
+			<ul class="unstyled">
+				<li>
+					<div class="question">
+						<i class="icon icon-arrow-down"></i> <strong>为什么我的货物发出多日，还未到达？</strong>
+					</div>
+					<div class="answers">您好，货物的运输需要进行配载、装车、中转、卸车等多个环节的操作，同时，对于距离较远的城市，还会进行多次的中转。所以，请您不要着急，您可以登陆货物跟踪模块，查询货物具体状态。</div>
+				</li>
+			</ul>
+
+			<ul class="unstyled">
+				<li>
+					<div class="question">
+						<i class="icon icon-arrow-down"></i> <strong>我的货物发出了，但我想更改运输方式，可以吗？</strong>
+					</div>
+					<div class="answers">您好，货物一经发出后，运输方式就已经确定了，无法在中途进行更改，还请您谅解。</div>
+				</li>
+			</ul>
+
+			<ul class="unstyled">
+				<li>
+					<div class="question">
+						<i class="icon icon-arrow-down"></i> <strong>我的收货人提取货物，需要带哪些证件资料？</strong>
+					</div>
+					<div class="answers">
+						您好，您的收货人在提取货物时需提供以下资料：<br /> 1）如为收货人本人：携带本人有效证件与提货密码，<br />
+						2）委托他人收货：需要携带收货人及受托人的有效证件，提货密码。
+					</div>
+				</li>
+			</ul>
+
+			<ul class="unstyled">
+				<li>
+					<div class="question">
+						<i class="icon icon-arrow-down"></i> <strong>我发运的货物，现想更改收货地址（收货人、联系方式），如何办理呢？</strong>
+					</div>
+					<div class="answers">您好，您需要携带您的运单原件、身份证、更改委托书到我们当地发货网点进行办理。</div>
+				</li>
+			</ul>
+
+			<ul class="unstyled">
+				<li>
+					<div class="question">
+						<i class="icon icon-arrow-down"></i> <strong>自提、派送是什么意思 ？</strong>
+					</div>
+					<div class="answers">
+						自提：就是您需要亲自去华宇的营业网点领取货物。<br />
+						派送：就是华宇会派专门的送货人员将您的货物送到您指定的地方。派送分为送货（不含上楼）和送货上楼两种。
+					</div>
+				</li>
+			</ul>
+
+			<ul class="unstyled">
+				<li>
+					<div class="question">
+						<i class="icon icon-arrow-down"></i> <strong>如果我的货物在你们运输途中遗失或者损坏时，你们如何处理？</strong>
+					</div>
+					<div class="answers">您好，如果在发货时，您已经为您的货物购买了保险，我们会根据货物实际丢失（破损）情况、保价金额，给您作出合理的赔偿方案；如果您没有为您的货物购买保险，根据承运合同，我司将按照灭失部分的运费两倍给出赔偿。</div>
+				</li>
+			</ul>
+
+			<ul class="unstyled">
+				<li>
+					<div class="question">
+						<i class="icon icon-arrow-down"></i> <strong>你们公司运输时间太慢了，造成我这么大的损失，怎么给我赔？</strong>
+					</div>
+					<div class="answers">您好，首先对于我们服务给您带来的不便，我代表公司向您表示歉意。货物运输需要组合装车的过程，同时我们也会不断的改善、提高我司的营运速度。但对于国内运输20天之内的货物，不在赔偿范围内，敬请谅解。</div>
+				</li>
+			</ul>
+
+			<ul class="unstyled">
+				<li>
+					<div class="question">
+						<i class="icon icon-arrow-down"></i> <strong>我要办理赔偿，需要提供什么手续？</strong>
+					</div>
+					<div class="answers">
+						1）货物运单复印件（到货提供签收凭证复印件）； <br />
+						2）索赔申请（写明运单编号、破损或灭失部分明细、保价金额、要求赔偿金额）； <br /> 3）货物清单； <br />
+						4）购买发票或相关价值证明； <br /> 5）公司名义需每份材料加盖公章（红章）、联系人身份证复印件，各人需提供身份证复印件；
+						<br /> 6）以上材料请以A4纸提供，传真无效；<br /> 7）如果您是收货人申报索赔的，要求发货人出示索赔授权书。
+					</div>
+				</li>
+			</ul>
+
+			<ul class="unstyled">
+				<li>
+					<div class="question">
+						<i class="icon icon-arrow-down"></i> <strong>玻璃陶瓷类的易碎物品，货物破损了怎么给我赔偿呢？</strong>
+					</div>
+					<div class="answers">您好，鉴于您所发的物品为高危险性易碎物品，对于此类物品根据合同条款的第十七条，易碎物品有20%破损率免除承运人赔偿责任。</div>
+				</li>
+			</ul>
+
+
+		</div>
+
+	</div>
+</body>
+</html>

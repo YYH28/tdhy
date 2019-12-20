@@ -1,0 +1,347 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta http-equiv="X-UA-Compatible" content="ie=edge">
+<title>公司简介</title>
+
+<script type="text/javascript" src="${request.contextPath}/js/jquery-1.6.2.min.js"></script>
+<script type="text/javascript" src="${request.contextPath}/js/jquery.selectui.js"></script>
+<style type="text/css">
+ul, ol {
+	list-style: none;
+}
+
+.p1 {
+	font-size: 14px;
+	font-weight: bold; /*加粗*/
+	text-align: center;
+}
+
+.titlenext {
+	width: 748px;
+	height: 44px;
+	background-color: #b4b4b4;
+	padding-left: 22px;
+	color: #ffffff;
+	display: flex;
+	align-items: center;
+}
+
+.col_right {
+	width: 770px;
+	background-color: #fff;
+	height: 997px;
+}
+
+.image {
+	width: 770px;
+	height: 150px;
+	margin-bottom: 35px;
+}
+
+a{text-decoration:none;outline:none;color:#666;}
+.txjy_layer_tab{padding-top:20px;}
+.txjy_layer_tab table td{ padding:5px 0; line-height:26px; font-size:12px;}
+.txjy_layer_tab table td .input{width:425px;}
+.add_sel{width:113px;height: 26px;}
+.txjy_layer_tab table td textarea {border-radius: 3px;height: 72px;width:396px;padding: 5px;}
+/*注册*/
+.reg_info{background:#fff; padding:50px 0;}
+.reg_form{width:550px; padding:0 25px 100px; border-right:1px dashed #c0c1c5;line-height:28px;}
+.action_title {font-size: 14px;color: #000;border-bottom: 1px solid #f0f0f0;padding: 10px;margin-bottom:50px;}
+.reg_form table td{ padding:5px 0;}
+.reg_form .tit {width: 150px;font-size: 14px;text-align: right;display: block;}
+.reg_form .reg_code_btn{ padding:0;line-height:28px;vertical-align: middle;margin-left: 10px;
+padding: 0 15px;}
+.tips{padding-left:20px; display:inline-block;vertical-align: middle;height:28px;}
+.tips .erro{color:#e64141;}
+.tips .succ{color:#8cd232;}
+.icon_succ,.icon_del {
+	background: url(../../images/bse/reg_ico.png) no-repeat -60px 0;
+	width: 15px;
+	height: 15px;
+	display:inline-block;
+	vertical-align:middle;
+	margin-right:3px;
+}
+.icon_succ{background-position: -30px 0;}
+.reg_aside{width:380px; padding-left:60px;}
+.reg_aside p{margin-bottom:20px;}
+.reg_service li{
+	background: url(../../images/bse/150703_icon01.png) no-repeat 24px 50%;padding-left:44px;
+}
+.retrv_form{background:#fff; padding:0 58px 50px;}
+.retrv_step{ height:67px; background:url(../../images/bse/150703_icon02.jpg) repeat-x 0 50%; width:810px; margin:0 auto; padding:20px 0; position:relative;}
+.retrv_step span{ display:block; width:67px; height:67px;background: url(../../images/bse/150703_icon03.png) no-repeat -71px 50%; line-height:67px; text-align:center;color:#fff; position:absolute;}
+.retrv_step .retrv_step1{left:0;}
+.retrv_step .retrv_step2{left:370px;}
+.retrv_step .retrv_step3{right:0;}
+.retrv_step .retrv_step_active{background-position:0 0;}
+.retrv_main{border:1px solid #cbcbcb; padding:35px 0 0 60px; min-height:335px;_height:335px;_overflow: visible;}
+.retrv_tab{height:46px;}
+.retrv_tab a{
+	background:#b4b4b4;
+	line-height:46px;
+	color:#fff;
+	width:268px;
+	display:block;
+	float:left;
+	margin-right:2px;
+	text-align:center;
+}
+.retrv_tab .active{background:#f15a22;}
+.retrv_list{display:none;}
+.UserPass_mobile{background: url(../../images/bse/150703_icon04_1.png) no-repeat 130px 90px;
+	padding:70px 0 0 185px;}
+.UserPass_mail{background: url(../../images/bse/150703_icon04_2.png) no-repeat 130px 90px;
+	padding:70px 0 0 185px;}
+.retrv_list table td{padding:10px 0;}
+.retrv_tips{padding-top:110px;}
+.retrv_tips i{
+	background: url(../../images/bse/150703_icon04.png) no-repeat;
+	width:54px;height:54px;display:inline-block;vertical-align:middle;margin-right:5px;
+}
+.easyDialog_footer{ text-align:center; padding:20px 0 30px;}
+.easyDialog_footer .btn_highlight,.easyDialog_footer .btn_normal{
+	display:inline-block;	
+	width:116px;
+	height:30px;
+	line-height:30px;
+	color:#fff;
+	border:0;
+	-webkit-border-radius:3px;
+  	border-radius:3px;
+	cursor: pointer;
+}
+.easyDialog_footer .btn_highlight{background:#F15A23;margin-right:20px;}
+.easyDialog_footer .btn_normal{background:#BEBEC0;}
+</style>
+
+</script>
+</head>
+</head>
+<body>
+	<div class="col_right">
+		<div class="image">
+			<img src="${request.contextPath}${staticPath}/images/busin_banner.jpg"
+				alt="关于华宇">
+		</div>
+		<div class="titlenext">
+			<h3>特许经营动态</h3>
+		</div>
+		<div class="txjy_layer_tab">
+				
+					<table border="0" cellspacing="0" cellpadding="0" width="100%">
+						<tbody>
+							<tr>
+								<td width="150" align="right"><span class="f_f15a22">*</span>特许经营申请区域：</td>
+								<td width="430">
+									<select class="add_sel" id="selectProvince" name="pid" onchange="javascript:showCitys();">
+										<option value="">请选择省</option>
+										
+											<option value="33">上海市</option>
+										
+											<option value="34">浙江省</option>
+										
+											<option value="35">江苏省</option>
+										
+											<option value="36">安徽省</option>
+										
+											<option value="37">福建省</option>
+										
+											<option value="38">广西省</option>
+										
+											<option value="39">海南省</option>
+										
+											<option value="40">广东省</option>
+										
+											<option value="41">河南省</option>
+										
+											<option value="42">陕西省</option>
+										
+											<option value="43">山西省</option>
+										
+											<option value="44">甘肃省</option>
+										
+											<option value="45">宁夏回族自治区</option>
+										
+											<option value="46">青海省</option>
+										
+											<option value="47">江西省</option>
+										
+											<option value="48">云南省</option>
+										
+											<option value="49">贵州省</option>
+										
+											<option value="50">湖北省</option>
+										
+											<option value="51">湖南省</option>
+										
+											<option value="52">重庆市</option>
+										
+											<option value="53">四川省</option>
+										
+											<option value="54">河北省</option>
+										
+											<option value="56">黑龙江省</option>
+										
+											<option value="57">北京市</option>
+										
+											<option value="58">天津市</option>
+										
+											<option value="59">吉林省</option>
+										
+											<option value="60">辽宁省</option>
+										
+											<option value="61">内蒙古</option>
+										
+											<option value="62">山东省</option>
+										
+											<option value="63">西藏</option>
+										
+											<option value="64">新疆维吾尔自治区</option>
+										
+									</select>
+									<select name="cid" class="add_sel" id="selectCity">
+										<option value="">请选择市</option>
+									</select>
+									<input id="sqqy" name="district" type="text" value="请输入详细地址" ov="请输入详细地址" class="input inputFocus grays" style="width:137px;"/>
+								</td>
+								
+								<td>
+								<div class="tips" id="sqqyTips">
+										<p class="erro">
+											<span class="icon_del"></span>
+											<span id="sqqyWarning"></span>
+										</p>
+									</div>
+								</td>
+							</tr>
+							<tr>
+								<td align="right"><span class="f_f15a22">*</span>公司/个人名称：</td>
+								<td><input id="gsmc" name="name" type="text" value="请输入公司/个人名称" ov="请输入公司/个人名称" class="input inputFocus grays"/></td>
+								<td>
+								<div class="tips" id="gsmcTips">
+										<p class="erro">
+											<span class="icon_del"></span>
+											<span id="gsmcWarning"></span>
+										</p>
+									</div></td>
+							</tr>
+							<tr>
+								<td align="right"><span class="f_f15a22">*</span>公司/个人地址：</td>
+								<td><input id="gsdz" name="address" type="text" value="请输入公司/个人地址" ov="请输入公司/个人地址" class="input inputFocus grays"/></td>
+								<td><div class="tips" id="gsdzTips">
+										<p class="erro">
+											<span class="icon_del"></span>
+											<span id="gsdzWarning"></span>
+										</p>
+									</div></td>
+							</tr>
+							<tr>
+								<td align="right"><span class="f_f15a22">*</span>公司注册资金(万元)：</td>
+								<td><input id="zczj" name="money" type="text" ov="请输入公司注册资金" value="请输入公司注册资金" class="input inputFocus grays"/></td>
+								<td><div class="tips" id="zczjTips">
+										<p class="erro">
+											<span class="icon_del"></span>
+											<span id="zczjWarning"></span>
+										</p>
+									</div></td>
+							</tr>
+							<tr>
+								<td align="right"><span class="f_f15a22">*</span>员工人数：</td>
+								<td><input id="ygrs" name="employeeno" type="text" value="请输入员工人数" ov="请输入员工人数" class="input inputFocus grays"/></td>
+								<td><div class="tips" id="ygrsTips">
+										<p class="erro">
+											<span class="icon_del"></span>
+											<span id="ygrsWarning"></span>
+										</p>
+									</div></td>
+							</tr>
+							<tr>
+								<td align="right"><span class="f_f15a22">*</span>联系人：</td>
+								<td><input id="lxr" name="contacts" type="text" value="请输入联系人" ov="请输入联系人" class="input inputFocus grays"/></td>
+								<td><div class="tips" id="lxrTips">
+										<p class="erro">
+											<span class="icon_del"></span>
+											<span id="lxrWarning"></span>
+										</p>
+									</div></td>
+							</tr>
+							<tr>
+								<td align="right"><span class="f_f15a22">*</span>联系方式：</td>
+								<td><input id="lxfs" name="tel" type="text" value="请输入联系方式" ov="请输入联系方式" class="input inputFocus grays"/></td>
+								<td><div class="tips" id="lxfsTips">
+										<p class="erro">
+											<span class="icon_del"></span>
+											<span id="lxfsWarning"></span>
+										</p>
+									</div></td>
+							</tr>
+							<tr>
+								<td align="right"><span class="f_f15a22">*</span>E-mail：</td>
+								<td><input id="dzyj" name="email" type="text" value="请输入E-mail" ov="请输入E-mail" class="input inputFocus grays"/></td>
+								<td><div class="tips" id="dzyjTips">
+										<p class="erro">
+											<span class="icon_del"></span>
+											<span id="dzyjWarning"></span>
+										</p>
+									</div></td>
+							</tr>
+							<tr>
+								<td align="right"><span class="f_f15a22">*</span>场地面积(㎡)：</td>
+								<td><input id="cdmj" name="area" type="text" value="请输入场地面积" ov="请输入场地面积" class="input inputFocus grays"/></td>
+								<td><div class="tips" id="cdmjTips">
+										<p class="erro">
+											<span class="icon_del"></span>
+											<span id="cdmjWarning"></span>
+										</p>
+									</div></td>
+							</tr>
+							<tr>
+								<td align="right"><span class="f_f15a22">*</span>自有车辆：</td>
+								<td><input id="zycl" name="car" type="text" value="请输入自有车辆" class="input inputFocus grays" ov="请输入自有车辆"/></td>
+								<td>
+									<div class="tips" id="zyclTips">
+										<p class="erro">
+											<span class="icon_del"></span>
+											<span id="zyclWarning"></span>
+										</p>
+									</div>
+								</td>
+							</tr>
+							<tr>
+								<td align="right" valign="top">留言内容：</td>
+								<td><textarea id="lynr" name="message" rows="3"></textarea></td>
+								<td>&nbsp;</td>
+							</tr>
+							<tr>
+								<td align="right">验证码：</td>
+								<td>
+								<input name="" id="validateCode_input" class="input" style="width:90px;" type="text" class="Codeinput" />
+								<img id="validateCode_img" src="genCheckCode.action" width="90" height="28" style="vertical-align: middle;" />
+								<a href="javascript:changeCode();">看不清？换一组</a>
+							</td>
+								<td>
+									<div class="tips" id="codeTips">
+										<p class="erro">
+											<span class="icon_del"></span>
+											<span id="codeNotice"></span>
+										</p>
+									</div>
+								</td>
+						</tr>
+						</tbody>
+					</table>
+				
+					<div class="easyDialog_footer">
+						<a id="txtijiao" class="btn_highlight">确定</a>
+						<a id="cancel" class="btn_normal" onclick="javascript:txregistCancel();">取消</a>
+					</div>
+				</div>
+	</div>
+</body>
+</html>

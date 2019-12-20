@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta http-equiv="X-UA-Compatible" content="ie=edge">
+<title>公司简介</title>
+
+<script type="text/javascript" src="${request.contextPath}/js/jquery-1.6.2.min.js"></script>
+<script type="text/javascript" src="${request.contextPath}/js/jquery.selectui.js"></script>
+<style type="text/css">
+ul, ol {
+	list-style: none;
+}
+
+.p1 {
+	font-size: 14px;
+	font-weight: bold; /*加粗*/
+	text-align: center;
+}
+
+.titlenext {
+	width: 748px;
+	height: 44px;
+	background-color: #b4b4b4;
+	padding-left: 22px;
+	color: #ffffff;
+	display: flex;
+	align-items: center;
+}
+
+.col_right {
+	width: 770px;
+	background-color: #fff;
+	height: 997px;
+}
+
+.image {
+	width: 770px;
+	height: 150px;
+	margin-bottom: 35px;
+}
+.hoau_news_tab{height:44px;}
+.hoau_news_tab a{display:block; background:#b4b4b4;color:#fff; width:189px; text-align:center; float:left; font-size:18px; line-height:44px; margin-right:1px;}
+.hoau_news_tab a:last-child{width:199px;margin-right:0;}
+.hoau_news_tab a:hover,.hoau_news_tab .active{ background:#f15a22;}
+.newselect{min-height:450px;_height:450px;_overflow:visible;}
+.newselect li{ line-height:44px; border-bottom:1px dashed #999; padding:0 15px;}
+.newselect li span{color:#808080;}
+.newselect li a:hover{color:#f15a22;}
+.hoau_news #title{color:#000;text-align: center;font-size: 16px;line-height: 30px;}
+.hoau_news #time{height: 20px;color: #666666;text-align: center;line-height: 20px;}
+.hoau_news #content {padding:25px;line-height:24px;color: #666;}
+.hoau_news #content a{color:#f15a22;}
+a{text-decoration:none;outline:none;color:#666;}
+</style>
+
+</script>
+</head>
+</head>
+<body>
+	<div class="col_right">
+		<div class="image">
+			<img src="${request.contextPath}${staticPath}/images/busin_banner.jpg"
+				alt="关于华宇">
+		</div>
+		<div class="titlenext">
+			<h3>特许经营动态</h3>
+		</div>
+		<div class="hoau_news_list">
+						<ul class="newselect">
+						
+							<li><span class="fr">
+							[2016-08-04 11:03:27] 
+							</span><a href="queryNewsDetail.action?newsId=164043&rowNum=2&forJump=特许经营动态">特许经营开放区域划分</a></li>
+						
+							<li><span class="fr">
+							[2015-06-18 11:45:24] 
+							</span><a href="queryNewsDetail.action?newsId=163290&rowNum=2&forJump=特许经营动态">热烈祝贺特许经营招商大会郑州站、西安站圆满结束</a></li>
+						
+							<li><span class="fr">
+							[2015-06-18 11:01:30] 
+							</span><a href="queryNewsDetail.action?newsId=163289&rowNum=2&forJump=特许经营动态">天地华宇特许经营全国招商大会--福建、徐州站圆满落幕</a></li>
+						
+							<li><span class="fr">
+							[2015-06-05 10:25:20] 
+							</span><a href="queryNewsDetail.action?newsId=163242&rowNum=2&forJump=特许经营动态">天地华宇特许经营全国招商启动</a></li>
+						
+						</ul>
+					</div>
+
+	</div>
+</body>
+</html>

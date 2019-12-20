@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta http-equiv="X-UA-Compatible" content="ie=edge">
+<title>公司简介</title>
+<style type="text/css">
+.p1 {
+	font-size: 14px;
+	font-weight: bold; /*加粗*/
+	text-align: center;
+}
+
+.titlenext {
+	width: 748px;
+	height: 44px;
+	background-color: #b4b4b4;
+	padding-left: 22px;
+	color: #ffffff;
+	display: flex;
+	align-items: center;
+}
+
+.col_right {
+	width: 770px;
+	background-color: #fff;
+	height: 997px;
+}
+
+.image {
+	width: 770px;
+	height: 150px;
+	margin-bottom: 35px;
+}
+/*联系我们*/
+.contact{ padding:20px 20px 80px;color:#666;line-height:24px;}
+</style>
+</head>
+<body>
+	<div class="col_right">
+		<div class="image">
+			<img
+				src="${request.contextPath}${staticPath}/images/about_banner.jpg"
+				alt="关于华宇">
+		</div>
+		<div class="titlenext">
+			<h3>联系我们</h3>
+		</div>
+		<div class="contact">
+			<div style="width: 730px; height: 350px; margin-bottom: 20px;"
+				id="map"></div>
+			<p class="f000 mb10">全国客服热线</p>
+			<p>全国客服热线:400-808-6666</p>
+			<p>服务时间：8：00-20：00（人工服务，全年无休）20：00-8：00（语音自助查询）</p>
+			<br />
+			<p class="f000 mb10">集团总部联系方式</p>
+			<p>集团总机：021-62636666</p>
+			<p>服务质量监督邮箱：service@hoau.net</p>
+			<p>媒体公关：hoau.pr@hoau.net</p>
+			<p>地址：上海市闵行区华翔路2239号 天地华宇大楼</p>
+			<p>邮编：201107</p>
+		</div>
+	</div>
+</body>
+<script type="text/javascript">
+
+$('body').delegate('#map', 'mousewheel', function() {
+	return false;
+});
+$('body').delegate('#map', 'DOMMouseScroll', function() {
+	return false;
+});
+    //创建和初始化地图函数：
+    function initMap(){
+      createMap();//创建地图
+      setMapEvent();//设置地图事件
+      addMapControl();//向地图添加控件
+      addMapOverlay();//向地图添加覆盖物
+    }
+    function createMap(){ 
+      map = new BMap.Map("map"); 
+      map.centerAndZoom(new BMap.Point(121.309628,31.210514),16);
+    }
+    function setMapEvent(){
+      map.enableScrollWheelZoom();
+      map.enableKeyboard();
+      map.enableDragging();
+      map.enableDoubleClickZoom()
+    }
+    function addClickHandler(target,window){
+      target.addEventListener("click",function(){
+        target.openInfoWindow(window);
+      });
+    }
+    function addMapOverlay(){
+      var markers = [
+        {content:"<hr/>全国客服热线:400-808-6666</br>服务时间：8：00-20：00（人工服务，全年无休）20：00-8：00（语音自助查询）",title:"<h3>联系方式</h3>",imageOffset: {width:-46,height:-21},position:{lat:31.21073,lng:121.30963}}
+      ];
+      for(var index = 0; index < markers.length; index++ ){
+        var point = new BMap.Point(markers[index].position.lng,markers[index].position.lat);
+        var marker = new BMap.Marker(point,{icon:new BMap.Icon("https://api.map.baidu.com/lbsapi/createmap/images/icon.png",new BMap.Size(20,25),{
+          imageOffset: new BMap.Size(markers[index].imageOffset.width,markers[index].imageOffset.height)
+        })});
+        var opts = {
+          width: 200,
+          title: markers[index].title,
+          enableMessage: false
+        };
+        var infoWindow = new BMap.InfoWindow(markers[index].content,opts);
+        addClickHandler(marker,infoWindow);
+        map.addOverlay(marker);
+      };
+    }
+    //向地图添加控件
+    function addMapControl(){
+      var navControl = new BMap.NavigationControl({anchor:BMAP_ANCHOR_TOP_LEFT,type:BMAP_NAVIGATION_CONTROL_LARGE});
+      map.addControl(navControl);
+    }
+    var map;
+	initMap();
+	
+	
+</script>
+</html>

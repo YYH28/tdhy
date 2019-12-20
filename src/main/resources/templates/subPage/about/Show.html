@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta http-equiv="X-UA-Compatible" content="ie=edge">
+<title>公司简介</title>
+<style type="text/css">
+.p1 {
+	font-size: 14px;
+	font-weight: bold; /*加粗*/
+	text-align: center;
+}
+
+.titlenext {
+	width: 748px;
+	height: 44px;
+	background-color: #b4b4b4;
+	padding-left: 22px;
+	color: #ffffff;
+	display: flex;
+	align-items: center;
+}
+
+.col_right {
+	width: 770px;
+	background-color: #fff;
+	height: 997px;
+}
+
+.image {
+	width: 770px;
+	height: 150px;
+	margin-bottom: 35px;
+}
+
+.job_tit {
+	padding-left: 30px;
+	height: 38px;
+	line-height: 38px;
+	color: #333;
+	/*font-size: 0;*/
+	background-color: #ebebeb;
+	border: 1px solid #d6d6d6;
+}
+
+.job_tit div {
+	width: 180px;
+	float: left;
+	margin: auto;
+}
+</style>
+</head>
+<body>
+	<div class="col_right">
+		<div class="image">
+			<img
+				src="${request.contextPath}${staticPath}/images/about_banner.jpg"
+				alt="关于华宇">
+		</div>
+		<div class="titlenext">
+			<h3>人才招聘</h3>
+		</div>
+		<div style="margin-top: 10px">
+			<div id="cenerContent">
+				<div class="job_tit">
+					<div>职位名称</div>
+					<div>工作地点</div>
+					<div>招聘人数</div>
+					<div>薪资范围</div>
+
+				</div>
+				<dl id="listDept" style="width: 770px">
+
+				</dl>
+			</div>
+		</div>
+	</div>
+</body>
+</html>

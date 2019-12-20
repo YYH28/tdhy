@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta http-equiv="X-UA-Compatible" content="ie=edge">
+<title>公司简介</title>
+<style type="text/css">
+.p1 {
+	font-size:14px;
+	font-weight:bold;  /*加粗*/
+	text-align: center;
+		}
+.titlenext{
+    width: 748px;
+    height: 44px;
+    background-color: #b4b4b4;
+    padding-left: 22px;
+    color: #ffffff;
+    display: flex;
+    align-items: center;
+}
+.col_right{
+	width:770px;
+    background-color: #fff;   
+    height: 997px;
+}
+.image{
+    width: 770px;
+    height: 150px;
+    margin-bottom: 35px;
+}
+/* 去掉列表前的标识, li 会继承 */
+ol,ul {
+	list-style:none;
+}
+/*资质荣誉*/
+.honor_pic{padding:10px 0 0 1px;}
+.honor_pic ul{display: flex;padding: 0;width: 770px;flex-wrap:wrap;}
+.honor_pic li{padding:0 7px; margin-bottom:15px;}
+.honor_pic li img{display:block;}
+.honor_list{padding-left:25px;}
+.honor_list ul{ display:block; border-left:1px solid #f15a22; padding:20px 0;}
+.honor_list ul li{
+	padding:6px 0;
+	line-height:20px;
+	color:#303030;
+	background: url(../../images/bse/150602_icon15.png) no-repeat 0 50%;
+	padding-left:20px;
+	margin-left:-3px;
+}
+</style>
+</head>
+<body>
+	<div class="col_right">
+		<div class="image">
+			<img src="${request.contextPath}${staticPath}/images/about_banner.jpg" alt="关于华宇">
+		</div>
+		<div class="titlenext">
+			<h3>资质荣誉</h3>
+		</div>
+		<div class="honor_box">
+    <div class="honor_pic">
+        <ul>
+            <li><img src="${request.contextPath}/images/191122_img01.jpg" width="240" /></li>
+            <li><img src="${request.contextPath}/images/191122_img02.jpg" width="240" /></li>
+            <li><img src="${request.contextPath}/images/190529_img01.png" width="240" /></li>
+            <li><img src="${request.contextPath}/images/190529_img02.png" width="240" /></li>
+            <li><img src="${request.contextPath}/images/190529_img03.png" width="240" /></li>
+            <li><img src="${request.contextPath}/images/190529_img04.png" width="240" /></li>
+            <li><img src="${request.contextPath}/images/190114_img03.png" width="240" /></li>
+            <li><img src="${request.contextPath}/images/190114_img04.png" width="240" /></li>
+            <li><img src="${request.contextPath}/images/170216_img09.jpg" width="240" /></li>
+            <li><img src="${request.contextPath}/images/170216_img08.jpg" width="240" /></li>
+            <li><img src="${request.contextPath}/images/170216_img07.jpg" width="240" /></li>
+            <li><img src="${request.contextPath}/images/170216_img06.png" width="240" /></li>
+            <li><img src="${request.contextPath}/images/170216_img05.jpg" width="240" /></li>
+            <li><img src="${request.contextPath}/images/170216_img04.png" width="240" /></li>
+            <li><img src="${request.contextPath}/images/170216_img03.png" width="240" /></li>
+            <li><img src="${request.contextPath}/images/170216_img02.jpg" width="240" /></li>
+            <li><img src="${request.contextPath}/images/170216_img01.jpg" width="240" /></li>
+
+        </ul>
+    </div>
+    <div class="honor_list">
+        <ul>
+            <li>2019金牛奖之品牌企业奖</li>
+            <li>2019中国物流与采购联合会5A级物流企业</li>
+            <li>2018年度中国物流百强企业</li>
+            <li>2018年度全国先进物流企业</li>
+            <li>2017年度中国智慧物流服务示范单位</li>
+            <li>2017年度中国电子商务物流创新服务年度大奖</li>
+            <li>2016年度中国电子商务物流百强企业</li>
+            <li>2016年度望亭镇经济贡献一等奖</li>
+            <li>2016年度纳税贡献奖</li>
+            <li>2015年度中国电子商务物流综合服务五十强</li>
+            <li>2015年度亚太区年度最佳品牌重塑奖“金奖“</li>
+            <li>2015年度望亭经济贡献一等奖</li>
+            <li>2015年度纳税贡献奖</li>
+            <li>2011-2016年优秀会员</li>
+            <li>2013中国物流与采购联合会5A级物流企业</li>
+            <li>2013中国物流社会责任贡献奖</li>
+            <li>2012中国十佳物流企业</li>
+            <li>2011中国物流管理创新型企业</li>
+            <li>2011中国扶贫基金会战略合作伙伴</li>
+            <li>2010年度中国最佳商业模式</li>
+        </ul>
+    </div>
+</div>
+	</div>
+</body>
+</html>

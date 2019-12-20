@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta http-equiv="X-UA-Compatible" content="ie=edge">
+<title>公司简介</title>
+<style type="text/css">
+/* 去掉列表前的标识, li 会继承 */
+ol,ul {
+	list-style:none;
+}
+.p1 {
+	font-size: 14px;
+	font-weight: bold; /*加粗*/
+	text-align: center;
+}
+
+.titlenext {
+	width: 748px;
+	height: 44px;
+	background-color: #b4b4b4;
+	padding-left: 22px;
+	color: #ffffff;
+	display: flex;
+	align-items: center;
+}
+
+.col_right {
+	width: 770px;
+	background-color: #fff;
+	height: 997px;
+}
+
+.image {
+	width: 770px;
+	height: 150px;
+	margin-bottom: 35px;
+}
+
+.hoau_news_tab {
+	height: 44px;
+}
+
+.hoau_news_tab a {
+	display: block;
+	background: #b4b4b4;
+	color: #fff;
+	width: 189px;
+	text-align: center;
+	float: left;
+	font-size: 18px;
+	line-height: 44px;
+	margin-right: 1px;
+}
+
+.hoau_news_tab a:last-child {
+	width: 199px;
+	margin-right: 0;
+}
+
+.hoau_news_tab a:hover, .hoau_news_tab .active {
+	background: #f15a22;
+}
+
+.hoau_news .hoau_news_list { /*border:1px solid #bfbfbf;*/
+	
+}
+
+.hoau_news_list {
+	padding: 10px 25px 20px;
+}
+
+.newselect {
+	min-height: 450px;
+	_height: 450px;
+	_overflow: visible;
+}
+
+.newselect li {
+	line-height: 44px;
+	border-bottom: 1px dashed #999;
+	padding: 0 15px;
+}
+
+.newselect li span {
+	color: #808080;
+}
+
+.newselect li a:hover {
+	color: #f15a22;
+}
+
+.hoau_news #title {
+	color: #000;
+	text-align: center;
+	font-size: 16px;
+	line-height: 30px;
+}
+
+.hoau_news #time {
+	height: 20px;
+	color: #666666;
+	text-align: center;
+	line-height: 20px;
+}
+
+.hoau_news #content {
+	padding: 25px;
+	line-height: 24px;
+	color: #666;
+}
+
+.hoau_news #content a {
+	color: #f15a22;
+}
+
+.news_pages {
+	padding: 30px 25px 30px 0;
+}
+
+.news_pages a {
+	margin: 0 25px;
+	color: #666;
+}
+
+.news_pages a:hover {
+	color: #f15a22;
+}
+</style>
+</head>
+<body>
+	<div class="col_right">
+		<div class="image">
+			<img
+				src="${request.contextPath}${staticPath}/images/about_banner.jpg"
+				alt="关于华宇">
+		</div>
+		<div class="titlenext">
+			<h3>社会责任</h3>
+		</div>
+		<div class="hoau_news_list">
+			<ul class="newselect">
+
+
+				<li><span class="fr"> [2019-01-14 14:11:16] </span><a
+					href="queryNewsDetail.action?newsId=164187&rowNum=1&forJump=社会责任">爱心承递，衣暖山区</a></li>
+
+				<li><span class="fr"> [2013-05-08 15:03:19] </span><a
+					href="queryNewsDetail.action?newsId=9533&rowNum=2&forJump=社会责任">天地华宇协助慈善组织紧急递送救灾物资</a></li>
+
+				<li><span class="fr"> [2012-06-20 15:54:54] </span><a
+					href="queryNewsDetail.action?newsId=8580&rowNum=3&forJump=社会责任">天地华宇协助中国扶贫基金会开展救灾物资紧急运输</a></li>
+
+				<li><span class="fr"> [2012-06-20 15:36:31] </span><a
+					href="queryNewsDetail.action?newsId=8579&rowNum=4&forJump=社会责任">TNT连续第10年举行全球“行走天地间”慈善义走</a></li>
+
+				<li><span class="fr"> [2012-06-20 15:25:17] </span><a
+					href="queryNewsDetail.action?newsId=8578&rowNum=5&forJump=社会责任">TNT荣膺中国扶贫基金会“2011年度公益爱心奖”</a></li>
+
+				<li><span class="fr"> [2010-06-10 11:32:08] </span><a
+					href="queryNewsDetail.action?newsId=4751&rowNum=6&forJump=社会责任">行走天地间，TNT天地华宇与您同在</a></li>
+
+				<li><span class="fr"> [2010-04-26 11:52:09] </span><a
+					href="queryNewsDetail.action?newsId=4620&rowNum=7&forJump=社会责任">天地华宇支持青海抗震救灾</a></li>
+
+				<li><span class="fr"> [2009-06-08 10:23:03] </span><a
+					href="queryNewsDetail.action?newsId=65&rowNum=8&forJump=社会责任">终结饥饿—行走天地间</a></li>
+
+				<li><span class="fr"> [2008-05-16 10:23:03] </span><a
+					href="queryNewsDetail.action?newsId=64&rowNum=9&forJump=社会责任">天地华宇纪念512大地震黄丝带活动</a></li>
+
+
+			</ul>
+			<div class="scott mt15">
+				<form method="post" action="socialResponsibility.action"
+					name="qPagerForm">
+					<input type="hidden" name="pageNo" value="1" /> <span
+						class="pageBox-info">共9条 1页</span><span class="disabled">&lt;上一页</span>
+					<span class="current">1</span> <span class="disabled">下一页&gt;</span>
+					<span class="scott_sel"> 到<input value="1" id="txtPageNum"
+						type="text" />页
+					</span><input type="button" class="submit tosnmiddle_btn"
+						onclick="javascript:turnOverPage($('#txtPageNum').val())"
+						value="确定" style="width: 60px;" />
+				</form>
+				<script language="javascript">
+					function turnOverPage(no) {
+						if (!isNaN(no)) {
+							if (no > 1) {
+								no = 1;
+							}
+							if (no < 1) {
+								no = 1;
+							}
+							document.qPagerForm.pageNo.value = no;
+							document.qPagerForm.submit();
+						}
+					}
+				</script>
+			</div>
+		</div>
+</body>
+</html>

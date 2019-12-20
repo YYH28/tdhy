@@ -88,4 +88,18 @@ public class NavigationServiceImpl implements NavigationService {
 		return navigationMapper.selectByExample(navigationExample);
 	}
 
+	@Override
+	public List<NavigationVm> getThirdNavVm(Integer id) throws Exception {
+		List<Navigation> secondNav = getMenuByPid(id);
+		List<NavigationVm> vms = new ArrayList<NavigationVm>();
+		for (Navigation nav : secondNav) {
+			NavigationVm vm = new NavigationVm();
+			List<Navigation> thirdNav = getMenuByPid(nav.getId());
+			BeanUtils.copyProperties(nav, vm);
+			vm.setNavigationChildren(thirdNav);
+			vms.add(vm);
+		}
+		return vms;
+	}
+
 }

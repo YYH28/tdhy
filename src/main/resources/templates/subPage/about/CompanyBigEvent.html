@@ -1,0 +1,361 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>公司简介</title>
+    <script src="${request.contextPath}/js/jquery-1.6.2.min.js"></script>
+    <script src="${request.contextPath}/js/jquery.selectui.js"></script>
+    <script src="${request.contextPath}/js/dashiji.js"></script>
+    <style type="text/css">
+        .p1 {
+            font-size: 14px;
+            font-weight: bold;
+            /*加粗*/
+            text-align: center;
+        }
+
+        .titlenext {
+            width: 748px;
+            height: 44px;
+            background-color: #b4b4b4;
+            padding-left: 22px;
+            color: #ffffff;
+            display: flex;
+            align-items: center;
+        }
+
+        .col_right {
+            width: 770px;
+            background-color: #fff;
+            height: 997px;
+        }
+
+        .image {
+            width: 770px;
+            height: 150px;
+            margin-bottom: 35px;
+        }
+
+        /*关于华宇*/
+        .about {
+            line-height: 32px;
+            padding: 30px 22px;
+        }
+
+		/*大事记修改*/
+        .year_events {}
+
+        .year_events .pagination {
+            border-bottom: 1px solid #e2e2e2;
+            height: 60px;
+            position: relative;
+        }
+
+        .year_events .pagination .prev,
+        .year_events .pagination .next {
+            background: url(../../images/bse/150713_icon01.png) no-repeat;
+            width: 8px;
+            height: 13px;
+            top: 24px;
+            CURSOR: pointer;
+            position: absolute;
+        }
+
+        .year_events .pagination .prev {
+            left: 14px
+        }
+
+        .year_events .pagination .next {
+            right: 14px;
+            background-position: -12px 0;
+        }
+
+        .thumbWrap {
+            POSITION: absolute;
+            WIDTH: 700px;
+            OVERFLOW: hidden;
+            TOP: 1px;
+            LEFT: 35px;
+        }
+
+        .year_events .holder {
+            width: 4000px
+        }
+
+        .year_events .holder i {
+            CURSOR: pointer;
+        }
+
+        .year_events i {
+            font-size: 14px;
+            font-style: normal;
+            display: block;
+            background: url(../../images/bse/bg02.gif) no-repeat;
+            width: 100px;
+            height: 60px;
+            text-align: center;
+            line-height: 60px;
+        }
+
+        .year_events i a {
+            color: #333;
+        }
+
+        .year_events i.selected {
+            background: url(../../images/bse/150713_icon02.jpg) no-repeat 50% 100%;
+            color: #000;
+        }
+
+        .year_events i.selected a {
+            color: #f0572c;
+        }
+        
+    </style>
+    <script type="text/javascript">
+    $(function(){
+    	$(".Milestones").delegate(".Milestones_tit", "click",
+    	function() {
+    		var n;
+    		$(".Milestones_list").hide();
+    		$(".Milestones_tit").removeClass("font-org");
+    		$(".Milestones_tit i").removeClass("icon-arrow-left").addClass("icon-arrow-right");		
+    		return $(this).next().toggle(),
+    		$(this).toggleClass("font-org"),
+    		n = $(this).find("i"),
+    		n.hasClass("icon-arrow-left") ? n.removeClass("icon-arrow-left").addClass("icon-arrow-right") : n.removeClass("icon-arrow-right").addClass("icon-arrow-left")
+    	});  
+    </script>
+</head>
+
+<body>
+    <div class="col_right">
+        <div class="image">
+            <img src="${request.contextPath}${staticPath}/images/about_banner.jpg" alt="关于华宇">
+        </div>
+        <div class="titlenext">
+            <h3>大事记</h3>
+        </div>
+        <div class="year_events">
+            <div id="paginate-syFocusThumb" class="pagination">
+                <I id=prev class=prev></I>
+                <div class=thumbWrap>
+                    <div class=holder>
+                        <i class=toc><A href="javascript:void(0)">2018</A></i>
+                        <i class=toc><A href="javascript:void(0)">2017</A></i>
+                        <i class=toc><A href="javascript:void(0)">2016</A></i>
+                        <i class=toc><A href="javascript:void(0)">2015</A></i>
+                        <i class=toc><A href="javascript:void(0)">2014</A></i>
+                        <i class=toc><A href="javascript:void(0)">2013</A></i>
+                        <i class=toc><A href="javascript:void(0)">2012</A></i>
+                        <i class=toc><A href="javascript:void(0)">2011</A></i>
+                        <i class=toc><A href="javascript:void(0)">2010</A></i>
+                        <i class=toc><A href="javascript:void(0)">2009</A></i>
+                        <i class=toc><A href="javascript:void(0)">2008</A></i>
+                        <i class=toc><A href="javascript:void(0)">2007</A></i>
+                    </div>
+                </div>
+                <I id=next class=next></I>
+            </div>
+            <div id="syFocusThumb" class="sliderwrapper">
+                <div class="Milestoneslist">
+                    <ul>
+                        <li>8月 中信产业基金与上汽集团签署股权转让协议，天地华宇正式加入上汽物流板块。</li>
+                        <li>3月 天地华宇推出车务管理系统并搭建取件管理系统，实现了天地华宇取件工作的全链条管理。</li>
+                    </ul>
+                </div>
+                <div class="Milestoneslist">
+                    <ul>
+                        <li>7月 天地华宇苏州物流园项目于7月21日正式竣工，标志着天地华宇全国智慧物流中心布局迈出了坚实的第一步。</li>
+                    </ul>
+                </div>
+                <div class="Milestoneslist">
+                    <ul>
+                        <li>6月 天地华宇供应链“第一仓”——上海九亭仓库正式运营，标志着天地华宇供应链业务迈出了第一步！
+                        </li>
+                        <li>5月 天地华宇苏州物流园项目正式破土动工，标志着天地华宇全国智慧物流中心布局迈出了坚实的第一步。</li>
+                        <li>3月 跳羚科技在总部成都揭牌，物流行业添互联网转型推动者。</li>
+                    </ul>
+                </div>
+                <div class="Milestoneslist">
+                    <ul>
+                        <li>11月 天地华宇获得“亚太区年度最佳品牌重塑奖”金奖，此次得奖无疑是对天地华宇品牌战略重塑而且完美实施的最大认可。</li>
+                        <li>9月 集团以“引领物流二十载，同心逐梦赢未来”为主题开展系列活动，热烈庆祝天地华宇二十周年诞辰。</li>
+                        <li>4月 天地华宇推出全新产品模式——“易到家”，开启了天地华宇B2C电商业务重要里程碑。</li>
+                        <li>4月 天地华宇整车产品正式更名为“专车达”，“专车达”作为一站式公路运输，在全国600多个城市的1600多个网点提供取送货服务。</li>
+                        <li>1月 天地华宇推出运力小微化项目，作为天地华宇4大创新产品之一，打造平台化战略，携手公司内外优秀运力资源，配套最后一公里服务前端拓展。”</li>
+                    </ul>
+                </div>
+                <div class="Milestoneslist">
+                    <ul>
+                        <li>12月 天地华宇再次中标通用电气（中国）物流采购合同</li>
+                        <li>12月 天地华宇整车产品单月产值驶入千万时代</li>
+                        <li>12月 天地华宇荣获“2014年度中国电子商务物流服务诚信奖”</li>
+                        <li>11月 天地华宇新OA重装上线，开启智能办公新模式</li>
+                        <li>11月 天地华宇“首届全国篮球友谊赛”圆满落幕</li>
+                        <li>9月 天地华宇十九周华诞</li>
+                        <li>8月 天地华宇快运45吨救灾物资至鲁甸地震灾区</li>
+                        <li>8月 天地华宇华南枢纽中心正式投入运营，助力华宇进入“大发展”时代</li>
+                        <li>7月 首届天地华宇业务领导力培训成功举办</li>
+                        <li>7月 天地华宇千里快运海南台风救灾物资</li>
+                        <li>6月 “新华宇，心服务”誓师大会在集团激情召开</li>
+                        <li>6月 中信产业基金全资控股的天地华宇集团宣布收购原凡客诚品旗下的如风达快递</li>
+                        <li>5月 天地华宇正式发布象征着“驶向未来”的天地华宇品牌新标识</li>
+                        <li>1月 天地华宇郑州公司入驻郑州经济开发区普洛斯物流园区</li>
+                        <li>1月 天地华宇2014单日产值突破千万</li>
+                        <li>1月 天地华宇杭州公司乔迁至萧山机场附近</li>
+                    </ul>
+                </div>
+                <div class="Milestoneslist">
+                    <ul>
+                        <li>12月 天地华宇与苏州相城区望亭镇人民政府举行苏州总部基地项目签约仪式</li>
+                        <li>12月 邓小波先生成为天地华宇董事会董事、公司总裁</li>
+                        <li>12月 天地华宇400客服中心2013销售下单突破3000万</li>
+                        <li>11月 天地华宇正式加入中信产业基金</li>
+                        <li>10月 天地华宇杭州公司签约入驻杭州空港物流中心</li>
+                        <li>9月 天地华宇通过中国物流与采购联合会“AAAAA”级物流企业复评</li>
+                        <li>9月 天地华宇成立18周庆祝</li>
+                        <li>9月 天地华宇与郑州市经济开发区达成战略合作意向框架协议</li>
+                        <li>8月 天地华宇总部乔迁回到闵行区华翔路</li>
+                        <li>7月 天地华宇第五届全国技能大赛举办</li>
+                        <li>6月 天地华宇“2013校园风暴”营销项目启动</li>
+                        <li>6月 天地华宇“桌面华宇”客户端程序试运行</li>
+                        <li>5月 天地华宇1453家门店IT网络标准化完成</li>
+                        <li>4月 天地华宇参与雅安地震紧急物资运输</li>
+                        <li>3月 天地华宇机械化分拣系统落户厦门分公司</li>
+                        <li>3月 TNT宣布天地华宇将出售给中信产业基金</li>
+                        <li>1月 天地华宇管理会召开，秉承“提质增效”经营方针</li>
+                    </ul>
+                </div>
+                <div class="Milestoneslist">
+                    <ul>
+                        <li>11月 56家分公司全面使用条形码扫描系统</li>
+                        <li>10月 “定日达”线路突破1000条</li>
+                        <li>9月 开展彝良地震灾区物资快运服务，支持灾区重建</li>
+                        <li>8月 “掌上销售”上线，通过移动办公，提高客户效率和服务水准</li>
+                        <li>7月 成为腾讯网首家公路快运服务供应商</li>
+                        <li>6月 举办“终结饥饿——行走天地间”暨员工家庭日活动</li>
+                        <li>2月 “定日达”3周庆</li>
+                    </ul>
+                </div>
+                <div class="Milestoneslist">
+                    <ul>
+                        <li>12月 “定日达”门店达到1185家，运营线路达到604条</li>
+                        <li>9月 “定日达”网络对接TNT亚洲陆运网</li>
+                        <li>7月 协助中国扶贫基金会救灾物资紧急运输</li>
+                        <li>6月 “校园风暴”正式启动</li>
+                        <li>5月 启用业界首个“一站式”手机客户服务软件</li>
+                        <li>2月 进军电子商务物流</li>
+                    </ul>
+                </div>
+                <div class="Milestoneslist">
+                    <ul>
+                        <li>12月 通过中国物流与采购联合会“AAAAA”级评定复评</li>
+                        <li>10月 “TNT世博家庭日” 天地华宇专场成功举办</li>
+                        <li>9月 15周庆举行，主题为“携手共进一路有你”</li>
+                        <li>7月 与姚基金合作建立希望小学</li>
+                        <li>6月 首次开展“校园快运”服务</li>
+                        <li>4月 积极援助玉树地震灾区同胞</li>
+                        <li>3月 建成中国首个全国定日公路快运骨干网络</li>
+                        <li>3月 青岛分拨中心正式启用</li>
+                        <li>1月 400客服热线正式开通</li>
+                    </ul>
+                </div>
+                <div class="Milestoneslist">
+                    <ul>
+                        <li>12月 正式启用全新的品牌标识和定日达广告语。</li>
+                        <li>11月 全面实施提供提货密码验证系统</li>
+                        <li>11月 “定日达”百家样板店开建</li>
+                        <li>6月 武汉大型公路快运分拨中心正式启用</li>
+                        <li>4月 “定日达”快运服务拓展至浙江杭州</li>
+                        <li>2月 TNT正式宣布收购天地华宇成功</li>
+                        <li>2月 推出“定日达”公路快运服务，确立行业服务新标杆</li>
+                    </ul>
+                </div>
+                <div class="Milestoneslist">
+                    <ul>
+                        <li>10月 启动首次全国校园招聘</li>
+                        <li>9月 “线路优化”项目初见成效并继续推进</li>
+                        <li>9月 启用“客户服务管理系统”</li>
+                        <li>8月 大型“绿色车队”确保奥运期间卓越客户体验</li>
+                        <li>7月 确立新的领导团队和推进定日达业务的发展战略</li>
+                        <li>5月 积极运输救援物资，全力协助汶川地震救灾与重建</li>
+                        <li>4月 助力“好运北京”国际马拉松赛，成功递送比赛监控设备</li>
+                        <li>3月 推出全新包装箱</li>
+                        <li>1月 宣布企业远景和核心价值</li>
+                    </ul>
+                </div>
+                <div class="Milestoneslist">
+                    <ul>
+                        <li>12月 购买350台车辆优化车队，提高运力</li>
+                        <li>7月 “天地华宇”作为企业标识和业务品牌首次亮相</li>
+                        <li>7月 再入选中国物流与采购联合会5A级物流企业</li>
+                        <li>3月 TNT正式完成对华宇物流的收购，天地华宇诞生</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <div style="clear: both;"></div>
+    </div>
+</body>
+<script type="text/javascript">
+
+$(function(){
+	var $bottomTools = $('.bottom_tools');	
+	$(window).scroll(function () {
+		var scrollHeight = $(document).height();
+		var scrollTop = $(window).scrollTop();
+		var $footerHeight = $('.footer').outerHeight(true);
+		var $windowHeight = $(window).height();
+		scrollTop > 50 ? $("#scrollUp").fadeIn(200).css("display","block") : $("#scrollUp").fadeOut(200);			
+		$bottomTools.css("bottom", scrollHeight - scrollTop - $footerHeight > $windowHeight ? 25 : $windowHeight + scrollTop + $footerHeight + 25 - scrollHeight);
+	});
+	$('#scrollUp').click(function (e) {
+		e.preventDefault();
+		$('html,body').animate({ scrollTop:0});
+	});
+		
+});
+
+$(function(){
+	$(function(){
+		$.each($(".inputFocus"),function(index,input){
+			   if($(input).val()==$(input).attr("ov")){
+				   $(input).addClass("grays");		
+			   }
+		});
+	});
+	$(".inputFocus").live("focus",function(){
+		var ov=$.trim($(this).attr("ov"));
+		var val=$.trim($(this).val());
+		$(this).removeClass("grays");
+		if(val==ov){
+			$(this).val("");
+		}
+
+	});
+ 	$(".inputFocus").live("blur",function(){
+		var ov=$.trim($(this).attr("ov"));
+		var val=$.trim($(this).val());
+		if(val==""){
+			$(this).val(ov).addClass("grays");
+		}
+	 });
+});
+
+
+slider.init({
+id: "syFocusThumb",
+contentsource: ["inline", ""], 
+toc: "scroll",
+nextprev: ["", ""],
+revealtype: "click",
+enablefade: [false, 0.15], 
+autorotate: [false,0], 
+delay: 1, //事件延迟时间(默认值：0，单位：ms)
+//playtab: 4, 默认的播放舌签
+onChange: function(previndex, curindex){ }});
+</script>
+</html>

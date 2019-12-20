@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <!--告诉IE浏览器以最高级模式渲染当前网页-->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>天地华宇物流物流官方网站</title>
+    <!-- 小标图 -->
+    <link rel="Shorcut Icon" href="${request.contextPath}${staticPath}/images/ico.png" type="image/x-icon" />
+    <!-- 关键字搜索 -->
+    <meta name="Keywords" content="公路快运,物流货运,天地华宇,天地华宇物流,
+    天地华宇物流查询,华宇物流,华宇物流查询,天地华宇俱乐部,华宇俱乐部，上汽物流" />
+    <!-- 只要设置了description页面描述，那么百度搜索结果，就能够显示这些语句，
+        这个技术叫做SEO（search engine optimization,搜索引擎优化 -->
+    <meta name="Description" content="&quot天地华宇是国家第一批
+    &quotAAAAA&quot级资质的物流企业，其运营网络是中国最大的公路快运网络之一。
+    可通过天地华宇官方网站实现在线下单、物流单号查询、物流网点查询、物流价格查询、
+    随时随地高效管理您的快件。您的尊贵托付，我们全心承递！" />
+    <link href="${request.contextPath}${staticPath}/css/base.css" rel="stylesheet" type="text/css" />
+    <link rel="stylesheet" href="${request.contextPath}/css/subpage.css">
+</head>
+
+<body>
+    <#include "${request.contextPath}/base/header.html">
+        <div class="subpage">
+            <div class="col_left">
+                <div class="title">
+                    <h3>${firstNav.navname}</h3>
+                </div>
+                <#list secondNav as second>
+                    <div class="sub">
+                        <div><a href="#" onclick="iframePage('${second.url}')">${second.navname}</a></div>
+                        <ul class="navContent">
+                            <#list second.navigationChildren as child>
+                                <li><a class="navA" onclick="iframePage('${child.url}')">${child.navname}</a></li>
+                            </#list>
+                        </ul>
+                    </div>
+                </#list>
+            </div>
+            <iframe class="col_right" id="iframeP" frameborder="0" scrolling="no" onload="autoHeight(this)">
+            </iframe>
+        </div>
+    <#include "${request.contextPath}/base/foot.html">
+</body>
+<script type="text/javascript">
+function iframePage(url){
+	document.getElementById('iframeP').src=url;
+}
+// 兼容性代码
+function autoHeight(iframe) {
+  if (iframe) {
+    var iframeWin = iframe.contentWindow || iframe.contentDocument.parentWindow;
+    if (iframeWin.document.body) {
+      iframe.height = iframeWin.document.documentElement.scrollHeight || iframeWin.document.body.scrollHeight;
+      iframe.width = iframeWin.document.documentElement.scrollWidth || iframeWin.document.body.scrollWidth;
+    }
+  }
+}
+window.onload = function() {
+  autoHeight(document.getElementById('iframeP'));
+}
+</script>
+</html>

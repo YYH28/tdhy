@@ -1,95 +1,86 @@
+    <link href="${request.contextPath}${staticPath}/css/base.css" rel="stylesheet" type="text/css" />
+    <link rel="stylesheet" href="${request.contextPath}${staticPath}/css/basecss/headerbase.css" type="text/css">
+     <script src="${request.contextPath}${staticPath}/admin/plugins/jquery/jquery-3.4.1.min.js"></script>
+    <!-- 头部固定 -->
+<div class="headlock">
+    <!-- 头部 -->
+    <div class="header dlb">
+        <div class="logo block"></div>
+        <div class="top dlb ">
+            <div class="topboolbar">
+                <ul class="topul">
+                    <#if userName!=''>
+                        <li class="dlb btns"><a href="/tdhy/toLogin">${userName}</a></li>
+                        <li class="dlb btns"><a href="/admin/index">后台管理</a></li>
+                        <#else>
+                            <li class="dlb btns"><a href="/tdhy/toLogin">登录</a></li>
+                            <li class="dlb btns"><a href="/tdhy/toRegister">注册</a></li>
+                    </#if>
+                </ul>
+            </div>
+            <div class="topnav ">
+                <ul class="topul">
+                    <li class="dlb topli"><a href="#" class=" cclub"><span>进入橙色俱乐部</span></a></li>
+                    <li class="dlb topli"><a href="#" class="navitems"><i class="navitems1"></i>网上下单</a></li>
+                    <li class="dlb topli"><a href="#" class="navitems"><i class="navitems2"></i>在线客服</a></li>
+                    <li class="dlb topli"><a href="#" class="navitems"><i class="navitems3"></i>在线理赔</a></li>
+                    <li class="dlb topli"><a href="#" class="navitems"><i class="navitems4"></i>留言</a></li>
+                    <li class=" dlb topli">服务热线：400-808-6666</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <div class="nav">
+        <ul class="navul">
+            <#list navigationVms as navigationDTO>
+                <#if navigationDTO.navname=="首页">
+                    <li class="navli navlihome">
+                        <a href="${navigationDTO.url}" class="navhome">
+                            <span class="navsp navs">
+                                ${navigationDTO.navname} 
+                            </span>
+                        </a>
+                <#else>
+                    <li class="navli" onmouseover="mouseOver(this)" onmouseout="mouseOut(this)" onclick="navClick(this)">
+                        <a href="${navigationDTO.url}?id=${navigationDTO.id}" class="navsp f16" >
+                             ${navigationDTO.navname} 
+                        </a>
+                </#if>
+                	<#if navigationDTO.navname!="首页">
+	                    <ul class="navlist <#if !(navigationDTO_has_next)>left90</#if>">
+	                        <#list navigationDTO.navigationChildren as children>
+	                            <li class="navlistli">
+	                                <a href="${children.url}" class="navlista">
+	                                    <span class="navChildSpan">${children.navname}</span>
+	                                    <i class="navlist_menu" style="background-position: ${children.navicon}"></i>
+	                                </a>
+	                            </li>
+	                        </#list>
+	                    </ul>
+                    </li>
+                </#if>
+            </#list>
+        </ul>
+    </div>
+</div>
+<!-- <script src="${request.contextPath}${staticPath}/js/index.js"></script> -->
+<script type="text/javascript">
+//	导航栏效果方法
+	function mouseOver(e) {
+		$(e).addClass("navChange");
+		$(e).children("ul").addClass("navChild");
+		console.log($(e).parent().children("ul"))
+	}
+	function mouseOut(e) {
+		$(e).removeClass("navChange");
+		$(e).children("ul").removeClass("navChild");
+	}
 
-<!DOCTYPE html>
-<html lang="en">
-
-<head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta http-equiv="X-UA-Compatible" content="ie=edge">
-<title>header</title>
-
-<link rel="stylesheet" href="${request.contextPath}${staticPath}/css/base.css"
-	type="text/css">
-
-<link rel="stylesheet"
-	href="${request.contextPath}${staticPath}/css/basecss/headerbase.css"
-	type="text/css">
-</head>
-
-<body>
-	<!-- 头部固定 -->
-	<div class="headlock">
-		<!-- 头部 -->
-		<div class="header dlb">
-			<div class="logo block"></div>
-
-			<div class="top dlb ">
-				<div class="topboolbar f14 ">
-					<ul class="topul">
-					<#if userName!=''>
-						<li class="dlb"><a href="/tdhy/toLogin" >${userName}</a></li>
-						<li class="dlb"><a href="/admin/index">后台管理</a></li>
-					<#else>
-						<li class="dlb"><a href="/tdhy/toLogin" >登录</a></li>
-						<li class="dlb"><a href="/tdhy/toRegister">注册</a></li>
-					</#if>
-					</ul>
-				</div>
-				<div class="topnav f14 ">
-					<ul class="topul">
-						<li class="dlb topli"><a href="#" class=" cclub"><span>
-									进入橙色俱乐部</span></a></li>
-						<li class="dlb topli"><a href="#" class="navitems "><i
-								class="navitems1"></i>网上下单</a></li>
-						<li class="dlb topli"><a href="#" class="navitems"><i
-								class="navitems2"></i>在线客服</a></li>
-						<li class="dlb topli"><a href="#" class="navitems"><i
-								class="navitems3"></i>在线理赔</a></li>
-						<li class="dlb topli"><a href="#" class="navitems"><i
-								class="navitems4"></i>留言</a></li>
-						<li class=" dlb topli">服务热线：400-808-6666</li>
-					</ul>
-				</div>
-			</div>
-		</div>
-		<div class="nav ">
-			<ul class="navul f16">
-				<#list navigationVms as navigationDTO> 
-					<#if navigationDTO.navname=="首页">
-						<li class="navli navlihome">
-							<a href="${navigationDTO.url}" class="navcld navhome"> 
-							<span class="navsp navs">
-							${navigationDTO.navname} </span>
-							</a> 
-					<#else>
-						<li class="navli">
-							<a href="${navigationDTO.url}" class="navcld"> 
-							<span class="navsp">
-								${navigationDTO.navname} </span>
-							</a>
-					</#if> 
-					<#if navigationDTO.navname!="首页"> <!-- <li class="navli navlihome">
-							<a href="${navigationDTO.url}" class="navhome"> 
-								<span class="navsp"></span>
-							</a>
-						</li> -->
-					<ul class="navlist <#if !(navigationDTO_has_next)>left90</#if>">
-					<#list navigationDTO.navigationChildren as children>
-						<li class="navlistli">
-							<a href="${children.url}" class="navlista"> 
-							<span class="navsp">${children.navname}</span> 
-							<i class="navlist_menu" style="background-position: ${children.navicon}"></i>
-							</a>
-						</li>
-					</#list>
-					</ul>
-				</#if>
-				</li>
-				</#list>
-			</ul>
-		</div>
-	</div>
-
-</body>
-
-</html>
+	function navClick(e){
+		$(e).siblings("li").removeClass("bcolorWhite")
+		$(e).siblings("li").children("a").removeClass("colorWhite")
+		$(e).addClass("bcolorWhite");
+		$(e).children("a").addClass("colorWhite")
+		
+	}
+</script>
